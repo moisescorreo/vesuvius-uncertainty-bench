@@ -167,6 +167,38 @@ Two consequences we measured rather than argued:
 
 → [`audit/README.md`](audit/README.md)
 
+### 3b. The controlled experiment: it is the labels, not the model
+
+Everything above is provenance and correlation. This is the causal test.
+Architecture, loss, schedule, augmentation, replay and evaluation harness held
+**fixed**; the **only** variable is which label supervises.
+
+| | supervision | median z per letter | cell AUC | contrast `c` |
+|---|---|---|---|---|
+| frozen checkpoint | — | 0.576 (116 keV) | 0.7106 | 2.964 |
+| trained, 3 arms | **model-generated**, 113/116 keV | **−0.03 … −0.22** | 0.590–0.606 | 0.39–0.49 |
+| frozen checkpoint | — | −0.044 (54 keV) | 0.6077 | 1.324 |
+| trained, same recipe | **human**, 54 keV | **+1.664** | **0.827** | **2.152** |
+
+Against the model-generated labels every arm finishes **below the frozen
+checkpoint**, no letter ever reaches z ≥ 3, and contrast collapses. The
+mechanism is measured: ink/background separation barely moves (0.085 → 0.034)
+while the background's robust sd inflates **×2.4–3.0** — the fine-tune adds
+*substrate noise*, not letter sharpness. Against human labels the identical
+recipe moves the reader roughly **half way to the achievable ceiling** (3.245
+on those same letters), and 54 keV retention *improves* (0.619 → 0.73–0.77)
+instead of collapsing.
+
+Corpus size is ruled out: `gold113` was first expanded from 10 to **38
+segments, 183.17 cm², 1015 plausible letters** before training.
+
+> **With everything but the label held fixed, letter form is learnable from
+> human labels and not from model-generated labels.** The supervision
+> bottleneck above 100 keV is the labels — which is the argument for an
+> independent benchmark rather than more training against the existing corpus.
+
+→ [`RESULTS.md` §R9](RESULTS.md)
+
 ### 4. How not to hallucinate: null models, bounded FPR, and measured walls
 
 This is the part we would most like other teams to take.

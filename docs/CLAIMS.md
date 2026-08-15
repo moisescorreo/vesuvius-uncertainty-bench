@@ -20,6 +20,8 @@ produces it, the seed it uses, and where the evidence lives.
 | **C-A2** | No >100 keV label was ever computed at 113/116 keV |  `scripts/audit_provenance.py --fetch` | n/a | same |
 | **C-A3** | The 116 keV "holdout" sample is in the generator's `compatible_samples` |  `scripts/audit_provenance.py --fetch` | n/a | same |
 | **C-A4** | Fine-tuning against the label: val ↑ (0.6534→0.6804), holdout ↓ (0.7288→0.6187), 54 keV human-label AUC → 0.50 | (reported, not re-runnable here — needs GPU training) | — | `audit/README.md` §2 |
+| **C-A5** | Controlled label experiment: model-generated labels → z 0.576 → −0.03…−0.22, c 2.96 → 0.39–0.49; human labels, same recipe → z −0.044 → 1.664, AUC 0.608 → 0.827, c 1.32 → 2.15 | (reported, not re-runnable here — needs GPU training) | pre-registered z ≥ 3 | `RESULTS.md` §R9 |
+| **C-A6** | Mechanism: separation 0.085 → 0.034 while background robust sd inflates ×2.4–3.0 (0.038 → 0.112) | (reported with C-A5) | — | `RESULTS.md` §R9 |
 | **C-V1** | Permutation null unsafe: max z_perm 17.4 on text-free substrate, 37.5 % FPR at Z=4; mosaic null 0.0 % | `scripts/null_comparison.py --windows 8 --n-perm 99 --n-mos 99` | 1903 | shipped substrate → `validation/data/substrate/*.npz` |
 | **C-V2** | Full campaign: PHerc1203 max z_perm 12.24 vs z_mos 2.50, 30.9 % FPR; PHerc0009B 16.84 vs 3.52 | `scripts/null_comparison.py --report` | 1717 / 1203 | shipped → `validation/data/power_1203_113kev.json`, `power_0009b_116kev.json` |
 | **C-V3** | Canvas nulls fabricate rhythm: z_mos to 7.61, z_perm to 22.23, p at the 1/200 floor | `scripts/null_comparison.py --report` | 1203 | shipped → `validation/data/power_1203_113kev.json` (`prueba_esfuerzo_lienzo`) |
@@ -51,8 +53,11 @@ covers the shipped JSON and substrate arrays.
 
 Stated so nobody wastes time looking:
 
-- **C-A4** (fine-tuning collapse) required GPU training runs. The numbers are
-  reported with their configuration; the training code is not packaged.
+- **C-A4/C-A5/C-A6** (the fine-tuning collapse and the controlled label
+  experiment) required GPU training runs. The numbers are reported with their
+  full configuration, holdouts, pre-registered metric and caveats; the training
+  code is not packaged. The 54 keV positive control used **human** ink labels
+  from Scroll 1, which this repository does not redistribute.
 - **C-V4** (blocked false positive) depends on a sealed reader map produced by
   a checkpoint we do not redistribute. The verdict JSON, its controls and the
   five-seed stability check are shipped.

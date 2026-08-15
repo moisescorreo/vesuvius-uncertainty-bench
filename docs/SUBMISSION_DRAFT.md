@@ -17,34 +17,54 @@ above 100 keV**
 
 ## Summary (200 words)
 
-Above 100 keV — the regime of most Grand Prize scrolls — the only available ink
-supervision is model output, and we show it descends from a single checkpoint
-run outside its calibration regime. This package makes that situation workable
-rather than merely lamentable.
+Above 100 keV — the regime of most Grand Prize scrolls — the only ink
+supervision available is model output, descended from a single checkpoint run
+outside its calibration regime. We show, by controlled experiment, that this is
+the binding constraint.
 
-**Tool.** A surface renderer validated to median per-layer correlation 1.00000
-against official renders, which downloads only the exact chunk shell that
-trilinear interpolation touches: 6.4 GB out of a 589 GB volume, 1.392× less
-than the naive bounding box, bit-identical output verified at 0 differing
-pixels. It renders a 29.21 × 29.58 mm contiguous surface of PHerc1203 — one
-component, zero holes — on a laptop.
+**The experiment.** Holding architecture, loss and schedule fixed and varying
+only the label: training against the 113/116 keV model-generated labels leaves
+letter form absent (median z per letter 0.58 → −0.03…−0.22, below the frozen
+checkpoint, contrast 2.96 → 0.42), while the identical recipe on *human* 54 keV
+labels installs it (z −0.04 → 1.66, cell AUC 0.61 → 0.83, contrast 1.32 → 2.15,
+with retention improving). The supervision bottleneck is the labels.
 
-**Benchmark.** `gold116` and `gold113`: 18 curated derived label sets at
-8.640 µm/116 keV and 9.362 µm/113 keV, shipped here, with an evaluation
-harness. Measured ceiling of eleven public checkpoints: **AUC 0.57 ± 0.04**,
-none separating from a trivial substrate baseline; 0.73 on the one clean-text
-segment.
+**Tool.** A surface renderer validated at median per-layer correlation 1.00000
+against official renders, fetching only the exact chunk shell interpolation
+touches — 6.4 GB of a 589 GB volume, 1.392× less than a naive bounding box,
+bit-identical output. Renders a 29.21 × 29.58 mm contiguous PHerc1203 surface
+on a laptop.
 
-**Validation.** The standard z-permutation null is unsafe here: on text-free
-substrate it reaches z = 17.4 and would call 30.9 % of blank windows a
-discovery. A block-mosaic null holds. This caught a real false positive
-(z_perm 6.14 vs z_mos 0.502) before it became a claim.
+**Benchmark.** 38 derived labels at 116/113 keV, shipped. Measured ceiling of
+eleven public checkpoints: AUC 0.57 ± 0.04, none separating from a substrate
+baseline.
 
-*(word count: 199)*
+**Validation.** The usual permutation null reaches z = 17.4 on blank substrate;
+a mosaic null holds, and caught a real false positive.
+
+*(word count: 200)*
 
 ---
 
 ## Contribution bullets
+
+- **A controlled experiment isolating the supervision bottleneck.** With
+  architecture, loss, schedule, augmentation and evaluation harness held fixed
+  and **only the label varied**: training against the published 113/116 keV
+  model-generated labels leaves letter form absent — median z per letter falls
+  from the frozen checkpoint's 0.576 to −0.03…−0.22 across three arms, zero
+  letters ever reach z ≥ 3, and contrast collapses from 2.96 to 0.39–0.49. The
+  mechanism is measured: ink/background separation barely moves (0.085 → 0.034)
+  while background robust sd inflates **×2.4–3.0** — the fine-tune adds
+  substrate noise, not letter sharpness. The **identical recipe on human 54 keV
+  labels** installs form: median z −0.044 → **1.664** (against an achievable
+  ceiling of 3.245 on the same letters), cell AUC 0.608 → **0.827**, contrast
+  1.32 → **2.15**, with 54 keV retention *improving* (0.619 → 0.73–0.77) rather
+  than collapsing as it had previously. Corpus size is ruled out: `gold113` was
+  first expanded to 38 segments, 183.17 cm², 1015 plausible letters.
+  **Conclusion: the >100 keV bottleneck is the labels, not the model** — which
+  is the case for building an independent benchmark rather than training harder
+  against the existing corpus.
 
 - **Surface renderer with an offline chunk planner.** Enumerates the exact set
   of zarr chunks a surface render can touch — `floor(p)` and `floor(p)+1` per
@@ -140,9 +160,12 @@ validation methodology as the findings it enables.
 - No scroll data is redistributed. The 42 MB of shipped labels are derived
   arrays under CC BY-NC 4.0 with the EduceLab-Scrolls citation
   (arXiv:2304.02084) and the Challenge data terms attached.
-- `RESULTS.md` contains **open** sections (R9–R11) explicitly marked as
-  pending. Either fill them before submitting or leave them marked — they are
-  written to be honest as placeholders.
+- `RESULTS.md` R9 and R10 are **CLOSED**. R9 is the controlled label experiment
+  (the package's differentiator); R10 is closed by its own pre-registered gate
+  (the trained reader's contrast fell, so the power grid was not re-run — stated
+  rather than quietly skipped). **R11 remains open** and is explicitly marked
+  "not run": per-segment agreement between the two ink generators that now
+  coexist at 113 keV.
 - If a demo is wanted, `python scripts/null_comparison.py --windows 8` runs on
   bundled data in a few minutes and reproduces the headline finding on a
   laptop with no downloads.
