@@ -1,0 +1,742 @@
+{
+ "fecha": "2026-08-14",
+ "pregunta": "La config A-W (banda 2.4-8.0 mm, min_periodos 3.5) tenia H0 de n=20 (cota FPR 15 %). Con n>=200 y semillas nuevas, que z* sale y queda FIRMABLE?",
+ "instrumentos": {
+  "coh": "101_vara_v2.evaluar via 105_r16_firmar.evaluar_r16",
+  "inco": "101f_inco_v2.evaluar",
+  "sha256_vara": "bbd7a579800f6341",
+  "sha256_inco": "74685940c2d4ddd2"
+ },
+ "config": {
+  "banda_mm": [
+   2.4,
+   8.0
+  ],
+  "min_periodos_coh": 3.5,
+  "min_periodos_inco": 3.0,
+  "n_perm": 48,
+  "n_mos": 199,
+  "semilla_maestra": 1717,
+  "mm_celda": 0.13824,
+  "extension_minima_mm": {
+   "coh": 28.0,
+   "inco": 24.0
+  },
+  "n_evaluaciones": 448,
+  "n_errores": 0
+ },
+ "brazos": {
+  "real": "sustrato REAL 0343P 116 keV (6 seg x media_c/sd_c), completos + recortes 85-100 %",
+  "l6": "lienzo block-bootstrap parche 6 mm (105.lienzo, stat sd_c) \u2014 el que uso r16 para el H0 ancho",
+  "l1424": "lienzo parche 14-24 mm (101f.lienzo_sustrato, mismas fuentes sd_c) \u2014 costura FUERA de la banda"
+ },
+ "coh": {
+  "n_total": 232,
+  "n_banda_completa": 133,
+  "frac_inconcluso": 0.427,
+  "real": {
+   "n": 104,
+   "n_banda_completa": 5,
+   "alcance_mm": {
+    "mediana": 6.84,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 5,
+    "z_cuantiles": {
+     "p50": -0.902,
+     "p90": -0.052,
+     "p95": 0.07,
+     "p99": 0.167,
+     "p100": 0.191
+    },
+    "z_media": -0.899,
+    "z_sd": 0.771,
+    "z_max": 0.191,
+    "n_z_ge_4": 0,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 7.19,
+    "frac_periodo_en_franja_nueva": 0.6,
+    "p_mos_min": 0.39,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 2.0,
+   "por_clase_real0343P": {
+    "n": 5,
+    "z_max": 0.19,
+    "z_mediana": -0.9,
+    "periodo_mediana": 7.19
+   }
+  },
+  "l6": {
+   "n": 104,
+   "n_banda_completa": 104,
+   "alcance_mm": {
+    "mediana": 8.02,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 104,
+    "z_cuantiles": {
+     "p50": 0.373,
+     "p90": 2.274,
+     "p95": 2.615,
+     "p99": 3.858,
+     "p100": 4.672
+    },
+    "z_media": 0.367,
+    "z_sd": 1.536,
+    "z_max": 4.672,
+    "n_z_ge_4": 1,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 4.7,
+    "frac_periodo_en_franja_nueva": 0.317,
+    "p_mos_min": 0.005,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 6.0,
+   "por_clase_l6_1447": {
+    "n": 12,
+    "z_max": 2.29,
+    "z_mediana": 0.19,
+    "periodo_mediana": 4.08
+   },
+   "por_clase_l6_50": {
+    "n": 44,
+    "z_max": 4.67,
+    "z_mediana": 0.37,
+    "periodo_mediana": 5.53
+   },
+   "por_clase_l6_70": {
+    "n": 48,
+    "z_max": 3.87,
+    "z_mediana": 0.38,
+    "periodo_mediana": 4.15
+   }
+  },
+  "l1424": {
+   "n": 24,
+   "n_banda_completa": 24,
+   "alcance_mm": {
+    "mediana": 8.02,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 24,
+    "z_cuantiles": {
+     "p50": 0.962,
+     "p90": 3.977,
+     "p95": 5.066,
+     "p99": 5.312,
+     "p100": 5.349
+    },
+    "z_media": 1.191,
+    "z_sd": 1.793,
+    "z_max": 5.349,
+    "n_z_ge_4": 3,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 2.83,
+    "frac_periodo_en_franja_nueva": 0.208,
+    "p_mos_min": 0.005,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 7.0,
+   "por_clase_l1424_50": {
+    "n": 12,
+    "z_max": 5.19,
+    "z_mediana": 0.95,
+    "periodo_mediana": 2.63
+   },
+   "por_clase_l1424_70": {
+    "n": 12,
+    "z_max": 5.35,
+    "z_mediana": 1.08,
+    "periodo_mediana": 3.18
+   }
+  },
+  "H0_conjunto": {
+   "n": 133,
+   "z_cuantiles": {
+    "p50": 0.494,
+    "p90": 2.289,
+    "p95": 3.008,
+    "p99": 5.024,
+    "p100": 5.349
+   },
+   "z_media": 0.468,
+   "z_sd": 1.618,
+   "z_max": 5.349,
+   "n_z_ge_4": 4,
+   "n_z_ge_8": 0,
+   "periodo_mediana": 4.15,
+   "frac_periodo_en_franja_nueva": 0.308,
+   "p_mos_min": 0.005,
+   "fpr_regla": 0.0,
+   "dispara_regla": 0
+  },
+  "z_estrella_conjunto": 7.0,
+  "fpr_cota95": 0.0226,
+  "contra_z8_provisional": {
+   "z_provisional_r16": 8.0,
+   "n_nulos_z_ge_8": 0,
+   "fpr_z8": 0.0,
+   "fpr_regla_z8": 0.0
+  },
+  "z_estrella_sin_l6": 7.0,
+  "H0_sin_l6": {
+   "n": 29,
+   "z_cuantiles": {
+    "p50": 0.841,
+    "p90": 3.324,
+    "p95": 4.861,
+    "p99": 5.304,
+    "p100": 5.349
+   },
+   "z_media": 0.83,
+   "z_sd": 1.84,
+   "z_max": 5.349,
+   "n_z_ge_4": 3,
+   "n_z_ge_8": 0,
+   "periodo_mediana": 3.18,
+   "frac_periodo_en_franja_nueva": 0.276,
+   "p_mos_min": 0.005,
+   "fpr_regla": 0.0,
+   "dispara_regla": 0
+  },
+  "top10_nulos": [
+   {
+    "brazo": "l1424",
+    "clase": "l1424_70",
+    "z": 5.349,
+    "z_perm": 12.907,
+    "z_mos": 5.349,
+    "p_mos": 0.005,
+    "periodo_mm": 2.35,
+    "ang": 82,
+    "ac3": [
+     0.09,
+     0.0144,
+     0.2507
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 5.189,
+    "z_perm": 16.182,
+    "z_mos": 5.189,
+    "p_mos": 0.005,
+    "periodo_mm": 8.018,
+    "ang": -79,
+    "ac3": [
+     0.0507,
+     0.0573,
+     0.0433
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 4.672,
+    "z_perm": 11.688,
+    "z_mos": 4.672,
+    "p_mos": 0.005,
+    "periodo_mm": 6.774,
+    "ang": -72,
+    "ac3": [
+     -0.0073,
+     -0.0859,
+     0.3124
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_70",
+    "z": 4.369,
+    "z_perm": 14.693,
+    "z_mos": 4.369,
+    "p_mos": 0.005,
+    "periodo_mm": 4.009,
+    "ang": -30,
+    "ac3": [
+     0.031,
+     0.1761,
+     -0.0203
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 3.871,
+    "z_perm": 15.317,
+    "z_mos": 3.871,
+    "p_mos": 0.005,
+    "periodo_mm": 7.88,
+    "ang": 61,
+    "ac3": [
+     -0.2666,
+     0.0959,
+     -0.1413
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 3.422,
+    "z_perm": 16.579,
+    "z_mos": 3.422,
+    "p_mos": 0.01,
+    "periodo_mm": 2.765,
+    "ang": 1,
+    "ac3": [
+     -0.112,
+     0.2181,
+     0.11
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 3.063,
+    "z_perm": 12.441,
+    "z_mos": 3.063,
+    "p_mos": 0.01,
+    "periodo_mm": 2.488,
+    "ang": -90,
+    "ac3": [
+     -0.021,
+     0.0449,
+     0.0933
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 2.971,
+    "z_perm": 8.054,
+    "z_mos": 2.971,
+    "p_mos": 0.02,
+    "periodo_mm": 3.041,
+    "ang": 4,
+    "ac3": [
+     0.1595,
+     0.1435,
+     -0.0109
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 2.895,
+    "z_perm": 9.059,
+    "z_mos": 2.895,
+    "p_mos": 0.015,
+    "periodo_mm": 7.603,
+    "ang": -73,
+    "ac3": [
+     0.4211,
+     0.1583,
+     -0.0102
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 2.625,
+    "z_perm": 10.944,
+    "z_mos": 2.625,
+    "p_mos": 0.015,
+    "periodo_mm": 6.497,
+    "ang": -73,
+    "ac3": [
+     -0.0073,
+     0.3355,
+     -0.0188
+    ],
+    "claim": false
+   }
+  ]
+ },
+ "inco": {
+  "n_total": 216,
+  "n_banda_completa": 170,
+  "frac_inconcluso": 0.213,
+  "real": {
+   "n": 104,
+   "n_banda_completa": 58,
+   "alcance_mm": {
+    "mediana": 8.02,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 58,
+    "z_cuantiles": {
+     "p50": -1.488,
+     "p90": -0.728,
+     "p95": -0.618,
+     "p99": -0.183,
+     "p100": 0.153
+    },
+    "z_media": -1.671,
+    "z_sd": 1.002,
+    "z_max": 0.153,
+    "n_z_ge_4": 0,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 5.53,
+    "frac_periodo_en_franja_nueva": 0.328,
+    "p_mos_min": 0.43,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 2.0,
+   "por_clase_real0343P": {
+    "n": 58,
+    "z_max": 0.15,
+    "z_mediana": -1.49,
+    "periodo_mediana": 5.53
+   }
+  },
+  "l6": {
+   "n": 88,
+   "n_banda_completa": 88,
+   "alcance_mm": {
+    "mediana": 8.02,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 88,
+    "z_cuantiles": {
+     "p50": -8.433,
+     "p90": -1.421,
+     "p95": 1.313,
+     "p99": 2.149,
+     "p100": 2.506
+    },
+    "z_media": -7.702,
+    "z_sd": 4.456,
+    "z_max": 2.506,
+    "n_z_ge_4": 0,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 2.49,
+    "frac_periodo_en_franja_nueva": 0.375,
+    "p_mos_min": 0.015,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 4.0,
+   "por_clase_l6_1447": {
+    "n": 8,
+    "z_max": -8.47,
+    "z_mediana": -10.26,
+    "periodo_mediana": 0.0
+   },
+   "por_clase_l6_50": {
+    "n": 40,
+    "z_max": 2.51,
+    "z_mediana": -8.29,
+    "periodo_mediana": 2.56
+   },
+   "por_clase_l6_70": {
+    "n": 40,
+    "z_max": 2.1,
+    "z_mediana": -8.13,
+    "periodo_mediana": 4.63
+   }
+  },
+  "l1424": {
+   "n": 24,
+   "n_banda_completa": 24,
+   "alcance_mm": {
+    "mediana": 8.02,
+    "max": 8.02
+   },
+   "h0": {
+    "n": 24,
+    "z_cuantiles": {
+     "p50": -3.522,
+     "p90": 1.5,
+     "p95": 2.202,
+     "p99": 2.587,
+     "p100": 2.668
+    },
+    "z_media": -4.21,
+    "z_sd": 4.693,
+    "z_max": 2.668,
+    "n_z_ge_4": 0,
+    "n_z_ge_8": 0,
+    "periodo_mediana": 2.56,
+    "frac_periodo_en_franja_nueva": 0.083,
+    "p_mos_min": 0.02,
+    "fpr_regla": 0.0,
+    "dispara_regla": 0
+   },
+   "z_estrella": 4.0,
+   "por_clase_l1424_50": {
+    "n": 12,
+    "z_max": 2.67,
+    "z_mediana": -0.71,
+    "periodo_mediana": 2.49
+   },
+   "por_clase_l1424_70": {
+    "n": 12,
+    "z_max": 0.62,
+    "z_mediana": -5.8,
+    "periodo_mediana": 2.63
+   }
+  },
+  "H0_conjunto": {
+   "n": 170,
+   "z_cuantiles": {
+    "p50": -4.181,
+    "p90": -0.563,
+    "p95": 1.302,
+    "p99": 2.375,
+    "p100": 2.668
+   },
+   "z_media": -5.151,
+   "z_sd": 4.621,
+   "z_max": 2.668,
+   "n_z_ge_4": 0,
+   "n_z_ge_8": 0,
+   "periodo_mediana": 3.18,
+   "frac_periodo_en_franja_nueva": 0.318,
+   "p_mos_min": 0.015,
+   "fpr_regla": 0.0,
+   "dispara_regla": 0
+  },
+  "z_estrella_conjunto": 4.0,
+  "fpr_cota95": 0.0176,
+  "contra_z8_provisional": {
+   "z_provisional_r16": 8.0,
+   "n_nulos_z_ge_8": 0,
+   "fpr_z8": 0.0,
+   "fpr_regla_z8": 0.0
+  },
+  "z_estrella_sin_l6": 4.0,
+  "H0_sin_l6": {
+   "n": 82,
+   "z_cuantiles": {
+    "p50": -1.593,
+    "p90": -0.445,
+    "p95": 0.606,
+    "p99": 2.383,
+    "p100": 2.668
+   },
+   "z_media": -2.414,
+   "z_sd": 2.914,
+   "z_max": 2.668,
+   "n_z_ge_4": 0,
+   "n_z_ge_8": 0,
+   "periodo_mediana": 5.05,
+   "frac_periodo_en_franja_nueva": 0.256,
+   "p_mos_min": 0.02,
+   "fpr_regla": 0.0,
+   "dispara_regla": 0
+  },
+  "top10_nulos": [
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 2.668,
+    "z_perm": 6.62,
+    "z_mos": 2.668,
+    "p_mos": 0.02,
+    "periodo_mm": 2.765,
+    "ang": -12.0,
+    "ac3": [
+     0.0615,
+     0.1393,
+     0.0969
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 2.506,
+    "z_perm": 4.741,
+    "z_mos": 2.506,
+    "p_mos": 0.015,
+    "periodo_mm": 7.603,
+    "ang": -60.0,
+    "ac3": [
+     -0.0521,
+     0.2279,
+     -0.0213
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 2.316,
+    "z_perm": 6.385,
+    "z_mos": 2.316,
+    "p_mos": 0.04,
+    "periodo_mm": 2.488,
+    "ang": 0.0,
+    "ac3": [
+     0.1279,
+     0.0269,
+     0.1687
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 2.096,
+    "z_perm": 3.637,
+    "z_mos": 2.096,
+    "p_mos": 0.03,
+    "periodo_mm": 8.018,
+    "ang": 60.0,
+    "ac3": [
+     0.0359,
+     0.087,
+     0.1195
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 1.872,
+    "z_perm": 2.013,
+    "z_mos": 1.872,
+    "p_mos": 0.05,
+    "periodo_mm": 2.627,
+    "ang": -6.0,
+    "ac3": [
+     0.0858,
+     0.0402,
+     0.1261
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 1.655,
+    "z_perm": 4.378,
+    "z_mos": 1.655,
+    "p_mos": 0.06,
+    "periodo_mm": 8.018,
+    "ang": 72.0,
+    "ac3": [
+     0.1275,
+     -0.0199,
+     0.136
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 1.559,
+    "z_perm": 2.811,
+    "z_mos": 1.559,
+    "p_mos": 0.08,
+    "periodo_mm": 2.765,
+    "ang": 0.0,
+    "ac3": [
+     0.1297,
+     0.0549,
+     0.066
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l1424",
+    "clase": "l1424_50",
+    "z": 1.362,
+    "z_perm": 3.17,
+    "z_mos": 1.362,
+    "p_mos": 0.095,
+    "periodo_mm": 2.627,
+    "ang": 0.0,
+    "ac3": [
+     0.1905,
+     0.1205,
+     -0.0873
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_70",
+    "z": 1.352,
+    "z_perm": 4.527,
+    "z_mos": 1.352,
+    "p_mos": 0.115,
+    "periodo_mm": 7.88,
+    "ang": 48.0,
+    "ac3": [
+     -0.0019,
+     0.0493,
+     0.3536
+    ],
+    "claim": false
+   },
+   {
+    "brazo": "l6",
+    "clase": "l6_50",
+    "z": 1.24,
+    "z_perm": 3.783,
+    "z_mos": 1.24,
+    "p_mos": 0.115,
+    "periodo_mm": 7.603,
+    "ang": -60.0,
+    "ac3": [
+     0.1452,
+     0.0422,
+     0.1661
+    ],
+    "claim": false
+   }
+  ]
+ },
+ "FIRMA_A_W": {
+  "nota": "H0 acumulado de las DOS campanas con la config A-W (banda 2.4-8.0 mm x min_periodos 3.5, vara v2): r16 semilla 1616 + r17 semilla 1717.",
+  "n_r16": 26,
+  "n_r17": 133,
+  "n_total": 159,
+  "z_estrella": 8.0,
+  "h0": {
+   "n": 159,
+   "z_cuantiles": {
+    "p50": 0.494,
+    "p90": 2.57,
+    "p95": 3.171,
+    "p99": 5.256,
+    "p100": 6.626
+   },
+   "z_media": 0.542,
+   "z_sd": 1.703,
+   "z_max": 6.626,
+   "n_z_ge_4": 6,
+   "n_z_ge_8": 0,
+   "periodo_mediana": 4.15,
+   "frac_periodo_en_franja_nueva": 0.314,
+   "p_mos_min": 0.005,
+   "fpr_regla": 0.0,
+   "dispara_regla": 0
+  },
+  "fpr_cota95": 0.0189,
+  "z_provisional_r16": 8.0,
+  "veredicto": "FIRMABLE: z* = 8, FPR de la regla completa 0/159, cota 95 % = 1.9 % (con n=20 era 15 %).",
+  "limitacion": "154 de 159 nulos validos son LIENZO: el sustrato real de 0343P solo alcanza el techo de 8.0 mm con 3.5 periodos en 5 de 104 sorteos (mediana de alcance 6.84 mm). La FPR de A-W es, por construccion, una FPR medida sobre lienzo."
+ }
+}

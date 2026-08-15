@@ -1,0 +1,204 @@
+{
+ "frente": "C4 — inventario del corpus con etiqueta independiente",
+ "regla_de_oro": {
+  "holdout": "20250511003658",
+  "regla": "20250511003658 JAMAS en train ni en seleccion. Es el unico texto_limpio a 116keV y el juez del frente A."
+ },
+ "utilizable_hoy": {
+  "cm2_valid": 119.92,
+  "cm2_entrenable_sin_holdout": 115.97,
+  "tinta_mm2_128": 1163.9,
+  "letras_plausibles": 689,
+  "energias": [
+   116.0,
+   113.0
+  ]
+ },
+ "ganancia_r18": {
+  "antes_solo_gold116_cm2": 32.03,
+  "ahora_cm2": 119.92,
+  "factor": 3.74,
+  "tinta_factor": 8.28
+ },
+ "calidad_ADVERTENCIA": {
+  "hallazgo": "gold113 NO es equivalente a gold116 en calidad. Tiene ~8x mas tinta y ~4x mas area, pero la tinta se FUNDE EN MANCHAS: componentes de hasta 14.7 mm2 cuando una letra cabe en ~2 mm2.",
+  "medida": "frac_en_manchas_gt3mm2 = fraccion de la tinta en componentes >3mm2",
+  "gold116": {
+   "mediana": 0.0,
+   "max": 0.155,
+   "comp_max_mm2_max": 3.2,
+   "trazo_p90_um_mediana": 354.5
+  },
+  "gold113": {
+   "mediana": 0.161,
+   "max": 0.442,
+   "comp_max_mm2_max": 14.7,
+   "trazo_p90_um_mediana": 486.0
+  },
+  "consecuencia": "el conteo de 'letras_plausibles' de gold113 (608) esta INFLADO: cuenta fragmentos de mancha con talla de letra. NO usar ese numero como promesa de texto legible.",
+  "los_2_buenos": [
+   "20250628074500",
+   "20250716055229"
+  ],
+  "recomendacion": "entrenar con gold113 PESANDO por tier (manchado = solo negativos, o peso 0.3) y evaluar SIEMPRE contra el holdout de gold116. Inspeccion visual en cache/r18/qc_gold113.png",
+  "artefacto_TILES_CAIDOS": {
+   "que": "ceros CUADRADOS dentro del dominio valido = tiles caidos de la inferencia tile256/stride128. No son papiro sin tinta: son ausencia de dato.",
+   "gold113": {
+    "segs_afectados": 9,
+    "n_huecos_por_seg": [
+     92,
+     68,
+     59,
+     62,
+     49,
+     25,
+     104,
+     54,
+     52,
+     53
+    ],
+    "lado_med_px": [
+     56.0,
+     56.0
+    ],
+    "frac_del_valido_max": 0.02479
+   },
+   "gold116": {
+    "segs_afectados": 0,
+    "n_huecos_por_seg": [
+     0,
+     9,
+     1,
+     2,
+     0,
+     0,
+     2,
+     1
+    ],
+    "nota": "los pocos huecos de gold116 son IRREGULARES = huecos reales de malla"
+   },
+   "accion": "ignore obligatorio: (label==0) & dominio_valido, dilatado 2px"
+  }
+ },
+ "resto_sin_tocar_0500P2": {
+  "n_segmentos": 28,
+  "descarga_MB": 187.1,
+  "nota": "el piloto tomo los 10 de mas tinta; los otros 28 estan a un script de distancia"
+ },
+ "receta_ignore_recomendada": {
+  "nota": "Umbrales sobre el uint8 del label transferido. La banda ignore no es opcional: el label vino de 2.215um y se subio x3.9007, asi que el borde del trazo tiene incertidumbre intrinseca de ~1px del resize MAS la del modelo generador.",
+  "thr_pos": 160,
+  "thr_neg": 96,
+  "dilat_borde_px": 3,
+  "halo_medido_p50_px_mediana": 5.0,
+  "ancho_trazo_p90_um_mediana": 324.3,
+  "ignore": [
+   "off_surface",
+   "margen al borde del dominio valido",
+   "96<=label<160",
+   "anillo dilatado alrededor de los positivos",
+   "huecos (label==0 dentro del dominio valido) dilatados 2px"
+  ],
+  "huecos_frac_del_valido_max": 0.0335,
+  "por_que_no_un_umbral_unico": "el barrido 64->192 mueve la fraccion de tinta por un factor >2 en todos los segmentos: el label NO es binario y forzarlo mete ruido de etiqueta directo al entrenamiento"
+ },
+ "tabla": [
+  {
+   "corpus": "gold116",
+   "muestra": "PHerc0343P",
+   "keV": 116.0,
+   "um_px": 8.64,
+   "estado": "LISTO (r17) + curado (r18)",
+   "ruta": "<local>/label116",
+   "curacion": "<local>/gold116_curacion.json",
+   "por_que_importa": "unica etiqueta en el voxel/energia del GP-2027",
+   "n": 8,
+   "valid_cm2": 32.03,
+   "tinta_mm2_128": 140.5,
+   "letras": 81,
+   "tiers": {
+    "texto_limpio": 1,
+    "texto_parcial": 5,
+    "moteado": 1,
+    "manchado": 0,
+    "vacio": 1
+   },
+   "holdout_sagrado": "20250511003658",
+   "entrenable_sin_holdout": {
+    "n": 7,
+    "valid_cm2": 28.08,
+    "tinta_mm2_128": 115.8,
+    "letras": 65,
+    "tiers": {
+     "texto_limpio": 0,
+     "texto_parcial": 5,
+     "moteado": 1,
+     "manchado": 0,
+     "vacio": 1
+    }
+   }
+  },
+  {
+   "corpus": "gold113",
+   "muestra": "PHerc0500P2",
+   "keV": 113.0,
+   "um_px": 9.362,
+   "estado": "NUEVO en r18 — piloto 10/38 transferido y verificado",
+   "ruta": "<local>/label113",
+   "curacion": "<local>/gold113_curacion.json",
+   "por_que_importa": "PHerc1203 (rollo del premio) es 113keV/9.362um: mismo material",
+   "n": 10,
+   "valid_cm2": 87.89,
+   "tinta_mm2_128": 1023.4,
+   "letras": 608,
+   "tiers": {
+    "texto_limpio": 2,
+    "texto_parcial": 5,
+    "moteado": 0,
+    "manchado": 3,
+    "vacio": 0
+   },
+   "holdout_sagrado": null,
+   "entrenable_sin_holdout": {
+    "n": 10,
+    "valid_cm2": 87.89,
+    "tinta_mm2_128": 1023.4,
+    "letras": 608,
+    "tiers": {
+     "texto_limpio": 2,
+     "texto_parcial": 5,
+     "moteado": 0,
+     "manchado": 3,
+     "vacio": 0
+    }
+   }
+  },
+  {
+   "corpus": "0009B (POTENCIAL)",
+   "muestra": "PHerc0009B",
+   "keV": 116.0,
+   "um_px": 8.64,
+   "estado": "SIN render y SIN ink-detection: NO es etiqueta hoy",
+   "ruta": "<local>/plan_0009b.json",
+   "por_que_importa": "segundo fragmento a 116keV => holdout CROSS-FRAGMENTO; ademas NO esta en compatible_samples del generador",
+   "n": 18,
+   "valid_cm2": 356.7,
+   "tinta_mm2_128": null,
+   "letras": null,
+   "tiers": null,
+   "holdout_sagrado": null,
+   "bloqueo": "requiere render fino 77keV + ink-detection (fuera de nuestro presupuesto)",
+   "lo_que_SI_podemos": {
+    "segmentos": [
+     "20250919123506"
+    ],
+    "n": 1,
+    "GB_union": 6.93,
+    "area_cm2": 24.6,
+    "veredicto": "FACTIBLE — es el arranque recomendado"
+   },
+   "coste_render_116keV_las_19_GB": 32.51,
+   "coste_render_77keV_fino_GB": 704.6
+  }
+ ]
+}

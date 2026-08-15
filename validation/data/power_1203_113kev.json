@@ -1,0 +1,1162 @@
+{
+ "__constancia__": "CALIBRACION sobre el sustrato de PHerc1203: FPR con 0 inyeccion y potencia por inyeccion de texto humano real. NO se abrio ningun mapa de lector de 1203. Decide el MOSAICO (z_mos,p_mos); z_perm es DIAGNOSTICO.",
+ "fecha": "2026-08-14",
+ "meta": {
+  "__constancia__": "CALIBRACION sobre el sustrato de PHerc1203. NO se abre ningun mapa de lector. Decide el MOSAICO (z_mos,p_mos).",
+  "mm_por_celda": 0.149792,
+  "celda_px": 16,
+  "um_px": 9.362,
+  "ventana_celdas": [
+   195,
+   197
+  ],
+  "ventana_mm": [
+   29.21,
+   29.51
+  ],
+  "n_perm": 199,
+  "n_mos": 199,
+  "contrastes": [
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   4.0,
+   6.0,
+   8.0
+  ],
+  "contrastes_mandato": [
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   4.0
+  ],
+  "n_por_contraste": {
+   "1.0": 24,
+   "1.5": 24,
+   "2.0": 24,
+   "2.5": 24,
+   "3.0": 24,
+   "4.0": 24,
+   "6.0": 12,
+   "8.0": 12
+  },
+  "combos": [
+   [
+    "vara",
+    "0343"
+   ],
+   [
+    "inco",
+    "0343"
+   ],
+   [
+    "inco",
+    "ancha"
+   ]
+  ],
+  "bandas": {
+   "0343": {
+    "vara": {
+     "banda": [
+      2.4,
+      6.5
+     ],
+     "z_previo": 4.0,
+     "min_periodos": 3.5
+    },
+    "inco": {
+     "banda": [
+      2.4,
+      7.0
+     ],
+     "z_previo": 2.0,
+     "min_periodos": 3.0
+    }
+   },
+   "ancha": {
+    "vara": {
+     "banda": [
+      2.4,
+      8.0
+     ],
+     "z_previo": 7.0,
+     "min_periodos": 3.5
+    },
+    "inco": {
+     "banda": [
+      2.4,
+      8.0
+     ],
+     "z_previo": 4.0,
+     "min_periodos": 3.0
+    }
+   }
+  },
+  "piso_p": 0.005,
+  "p_claim": 0.01,
+  "q_bh": 0.05,
+  "piso_ok_claim": true,
+  "m_max_bh": 10,
+  "m_familia_primaria": 3,
+  "piso_ok_bh_m4": true,
+  "pool_posiciones": 1098,
+  "cob_min": 0.99,
+  "posiciones_usadas": 60,
+  "ventanas_no_solapadas_en_1203": 1,
+  "solape": {
+   "iou_medio": 0.7956,
+   "iou_mediano": 0.7953,
+   "iou_max": 0.95,
+   "dist_min_celdas": 4.5
+  },
+  "bancos": {
+   "banco": [
+    "20230522181603",
+    "20230522215721",
+    "20230530212931",
+    "20230531121653",
+    "20230701020044",
+    "20230813_real_",
+    "20230827161847",
+    "20230901184804",
+    "20230903193206",
+    "20230904020426",
+    "20230904135535",
+    "20230905134255",
+    "20230929220924",
+    "20230929220926",
+    "20231001164029",
+    "20231005123333",
+    "20231005123336",
+    "20231012184420",
+    "20231012184421",
+    "20231016151000",
+    "20231022170900",
+    "recto_inklabel",
+    "verso_inklabel"
+   ],
+   "periodos_mm": {
+    "20230522181603": 7.19,
+    "20230522215721": 6.741,
+    "20230530212931": 7.19,
+    "20230531121653": 5.992,
+    "20230701020044": 7.49,
+    "20230813_real_": 4.793,
+    "20230827161847": 6.89,
+    "20230901184804": 6.741,
+    "20230903193206": 7.19,
+    "20230904020426": 6.741,
+    "20230904135535": 6.741,
+    "20230905134255": 7.04,
+    "20230929220924": 6.89,
+    "20230929220926": 6.89,
+    "20231001164029": 7.49,
+    "20231005123333": 6.89,
+    "20231005123336": 6.591,
+    "20231012184420": 7.04,
+    "20231012184421": 7.49,
+    "20231016151000": 7.19,
+    "20231022170900": 6.441,
+    "recto_inklabel": 2.696,
+    "verso_inklabel": 2.846
+   },
+   "_descartadas_geometria": [
+    "20230520175435",
+    "20230531193658",
+    "20230611014200",
+    "20230620230617",
+    "20230620230619",
+    "20230702185753",
+    "20230820203112",
+    "20230902141231",
+    "20230909121925",
+    "20231004222109",
+    "20231012184423",
+    "20231106155351",
+    "20231210121321"
+   ],
+   "_fuera_de_banda_ancha": [
+    "20230530164535",
+    "20230826170124",
+    "20231007101615"
+   ],
+   "_en_banda_vara_0343": [
+    "20230531121653",
+    "20230813_real_",
+    "recto_inklabel",
+    "verso_inklabel"
+   ],
+   "_todos_los_periodos_mm": {
+    "20230520175435": 8.089,
+    "20230522181603": 7.19,
+    "20230522215721": 6.741,
+    "20230530164535": 2.397,
+    "20230530212931": 7.19,
+    "20230531121653": 5.992,
+    "20230531193658": 8.089,
+    "20230611014200": 6.741,
+    "20230620230617": 2.397,
+    "20230620230619": 2.397,
+    "20230701020044": 7.49,
+    "20230702185753": 6.741,
+    "20230813_real_": 4.793,
+    "20230820203112": 7.789,
+    "20230826170124": 2.397,
+    "20230827161847": 6.89,
+    "20230901184804": 6.741,
+    "20230902141231": 2.397,
+    "20230903193206": 7.19,
+    "20230904020426": 6.741,
+    "20230904135535": 6.741,
+    "20230905134255": 7.04,
+    "20230909121925": 9.587,
+    "20230929220924": 6.89,
+    "20230929220926": 6.89,
+    "20231001164029": 7.49,
+    "20231004222109": 6.441,
+    "20231005123333": 6.89,
+    "20231005123336": 6.591,
+    "20231007101615": 8.838,
+    "20231012184420": 7.04,
+    "20231012184421": 7.49,
+    "20231012184423": 7.04,
+    "20231016151000": 7.19,
+    "20231022170900": 6.441,
+    "20231106155351": 6.89,
+    "20231210121321": 7.04,
+    "recto_inklabel": 2.696,
+    "verso_inklabel": 2.846
+   }
+  },
+  "n_tareas": 278
+ },
+ "n_corridas": 278,
+ "n_inyecciones": 168,
+ "n_nulo_pos": 55,
+ "n_nulo_lienzo": 55,
+ "h0": {
+  "vara_0343": {
+   "n": 55,
+   "fuente": "ventanas reales de 29 mm del lienzo de 1203",
+   "z_mos": {
+    "mediana": -1.625,
+    "p90": 1.694,
+    "p95": 1.857,
+    "p99": 2.263,
+    "max": 2.502
+   },
+   "p_mos_min": 0.02,
+   "frac_p_le_claim": 0.0,
+   "banda_completa": 1.0,
+   "fpr_z_previo": 0.0,
+   "fpr_cota95": 0.0545,
+   "periodo_preferido_mm": {
+    "mediana": 5.542,
+    "p25": 4.569,
+    "p75": 5.992
+   }
+  },
+  "inco_0343": {
+   "n": 55,
+   "fuente": "ventanas reales de 29 mm del lienzo de 1203",
+   "z_mos": {
+    "mediana": -3.155,
+    "p90": -0.514,
+    "p95": 0.433,
+    "p99": 1.322,
+    "max": 1.468
+   },
+   "p_mos_min": 0.09,
+   "frac_p_le_claim": 0.0,
+   "banda_completa": 1.0,
+   "fpr_z_previo": 0.0,
+   "fpr_cota95": 0.0545,
+   "periodo_preferido_mm": {
+    "mediana": 5.243,
+    "p25": 0.0,
+    "p75": 6.741
+   }
+  },
+  "inco_ancha": {
+   "n": 55,
+   "fuente": "ventanas reales de 29 mm del lienzo de 1203",
+   "z_mos": {
+    "mediana": -3.348,
+    "p90": -1.186,
+    "p95": 0.061,
+    "p99": 1.209,
+    "max": 1.76
+   },
+   "p_mos_min": 0.05,
+   "frac_p_le_claim": 0.0,
+   "banda_completa": 1.0,
+   "fpr_z_previo": 0.0,
+   "fpr_cota95": 0.0545,
+   "periodo_preferido_mm": {
+    "mediana": 6.441,
+    "p25": 0.0,
+    "p75": 7.115
+   }
+  }
+ },
+ "prueba_esfuerzo_lienzo": {
+  "vara_0343": {
+   "n": 55,
+   "z_mos_mediana": -0.731,
+   "z_mos_max": 7.606,
+   "p_mos_min": 0.005,
+   "z_perm_max": 22.228,
+   "frac_por_encima_de_z_previo": 0.0364,
+   "frac_por_encima_de_z_estrella": 0.0364,
+   "veredicto": "FALSEA: no es un nulo valido para 1203"
+  },
+  "inco_0343": {
+   "n": 55,
+   "z_mos_mediana": -0.847,
+   "z_mos_max": 6.234,
+   "p_mos_min": 0.005,
+   "z_perm_max": 19.947,
+   "frac_por_encima_de_z_previo": 0.0545,
+   "frac_por_encima_de_z_estrella": 0.0545,
+   "veredicto": "FALSEA: no es un nulo valido para 1203"
+  },
+  "inco_ancha": {
+   "n": 55,
+   "z_mos_mediana": -0.326,
+   "z_mos_max": 4.704,
+   "p_mos_min": 0.005,
+   "z_perm_max": 19.012,
+   "frac_por_encima_de_z_previo": 0.0545,
+   "frac_por_encima_de_z_estrella": 0.0545,
+   "veredicto": "FALSEA: no es un nulo valido para 1203"
+  }
+ },
+ "diagnostico_z_perm": {
+  "vara_0343": {
+   "nulo_pos": {
+    "mediana": 1.803,
+    "p95": 10.379,
+    "max": 12.238,
+    "frac_ge_4": 0.3091,
+    "frac_ge_z_previo": 0.3091
+   }
+  },
+  "inco_0343": {
+   "nulo_pos": {
+    "mediana": -8.385,
+    "p95": 4.296,
+    "max": 7.96,
+    "frac_ge_4": 0.0545,
+    "frac_ge_z_previo": 0.0909
+   }
+  },
+  "inco_ancha": {
+   "nulo_pos": {
+    "mediana": -7.147,
+    "p95": 4.339,
+    "max": 9.964,
+    "frac_ge_4": 0.0727,
+    "frac_ge_z_previo": 0.0727
+   }
+  }
+ },
+ "z_estrella_1203": {
+  "vara_0343": {
+   "z_previo": 4.0,
+   "z_max_nulo_real": 2.502,
+   "z_estrella": 4.0,
+   "regla": "z* = max(z* calibrado previo, ceil(max z_mos bajo H0 real)+1) \u2014 la MISMA regla de r15/r16; el nulo de lienzo NO entra"
+  },
+  "inco_0343": {
+   "z_previo": 2.0,
+   "z_max_nulo_real": 1.468,
+   "z_estrella": 3.0,
+   "regla": "z* = max(z* calibrado previo, ceil(max z_mos bajo H0 real)+1) \u2014 la MISMA regla de r15/r16; el nulo de lienzo NO entra"
+  },
+  "inco_ancha": {
+   "z_previo": 4.0,
+   "z_max_nulo_real": 1.76,
+   "z_estrella": 4.0,
+   "regla": "z* = max(z* calibrado previo, ceil(max z_mos bajo H0 real)+1) \u2014 la MISMA regla de r15/r16; el nulo de lienzo NO entra"
+  }
+ },
+ "potencia": {
+  "vara_0343": {
+   "z_estrella": 4.0,
+   "curva_c_nominal": {
+    "1.0_nominal": {
+     "n": 24,
+     "detecta": 2,
+     "tasa": 0.083,
+     "z_mos_mediana": -1.286,
+     "z_mos_max": 4.319,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.862
+    },
+    "1.5_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -0.829,
+     "z_mos_max": 3.193,
+     "p_mos_min": 0.015,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.288
+    },
+    "2.0_nominal": {
+     "n": 24,
+     "detecta": 2,
+     "tasa": 0.083,
+     "z_mos_mediana": -0.82,
+     "z_mos_max": 4.964,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.782
+    },
+    "2.5_nominal": {
+     "n": 24,
+     "detecta": 2,
+     "tasa": 0.083,
+     "z_mos_mediana": 0.302,
+     "z_mos_max": 4.214,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.208
+    },
+    "3.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.165,
+     "z_mos_max": 2.626,
+     "p_mos_min": 0.02,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.529
+    },
+    "4.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -0.456,
+     "z_mos_max": 3.682,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "6.0_nominal": {
+     "n": 12,
+     "detecta": 1,
+     "tasa": 0.083,
+     "z_mos_mediana": 1.39,
+     "z_mos_max": 4.057,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.268
+    },
+    "8.0_nominal": {
+     "n": 12,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": 0.062,
+     "z_mos_max": 2.235,
+     "p_mos_min": 0.02,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.925
+    }
+   },
+   "curva_c_realizado": {
+    "0_1": {
+     "n": 20,
+     "detecta": 1,
+     "tasa": 0.05,
+     "z_mos_mediana": -1.155,
+     "z_mos_max": 4.086,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.801
+    },
+    "1_2": {
+     "n": 54,
+     "detecta": 3,
+     "tasa": 0.056,
+     "z_mos_mediana": -0.633,
+     "z_mos_max": 4.964,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.389
+    },
+    "2_3": {
+     "n": 45,
+     "detecta": 2,
+     "tasa": 0.044,
+     "z_mos_mediana": 0.161,
+     "z_mos_max": 4.214,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.368
+    },
+    "3_4": {
+     "n": 22,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -0.619,
+     "z_mos_max": 3.682,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "4_5": {
+     "n": 2,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": 2.397,
+     "z_mos_max": 3.568,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 4.49
+    },
+    "5_99": {
+     "n": 22,
+     "detecta": 1,
+     "tasa": 0.045,
+     "z_mos_mediana": 0.363,
+     "z_mos_max": 4.057,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.025
+    }
+   },
+   "por_periodo_inyectado": {
+    "P_2.4_5.0": {
+     "n": 20,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -0.759,
+     "z_mos_max": 2.907,
+     "p_mos_min": 0.02,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.06,
+     "tasa_c_nominal_ge_6": 0.0,
+     "c_realizado_mediano_c_ge_6": 5.901,
+     "n_c_ge_6": 2
+    },
+    "P_5.0_6.44": {
+     "n": 8,
+     "detecta": 2,
+     "tasa": 0.25,
+     "z_mos_mediana": 1.5,
+     "z_mos_max": 4.964,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.341,
+     "tasa_c_nominal_ge_6": 0.5,
+     "c_realizado_mediano_c_ge_6": 6.059,
+     "n_c_ge_6": 2
+    },
+    "P_6.44_8.0": {
+     "n": 140,
+     "detecta": 5,
+     "tasa": 0.036,
+     "z_mos_mediana": -0.633,
+     "z_mos_max": 4.364,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.225,
+     "tasa_c_nominal_ge_6": 0.0,
+     "c_realizado_mediano_c_ge_6": 5.493,
+     "n_c_ge_6": 20
+    }
+   },
+   "X_c_realizado_80": null,
+   "X_c_realizado_50": null,
+   "c_nominal_80": null,
+   "c_nominal_50": null,
+   "potencia_agregada": {
+    "c_real_<2": {
+     "n": 74,
+     "detecta": 4,
+     "tasa": 0.054,
+     "z_mos_mediana": -0.742,
+     "z_mos_max": 4.964,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.295,
+     "ic95": [
+      0.021,
+      0.131
+     ]
+    },
+    "c_real_2-4": {
+     "n": 67,
+     "detecta": 2,
+     "tasa": 0.03,
+     "z_mos_mediana": -0.374,
+     "z_mos_max": 4.214,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.538,
+     "ic95": [
+      0.008,
+      0.102
+     ]
+    },
+    "c_real_>=4": {
+     "n": 24,
+     "detecta": 1,
+     "tasa": 0.042,
+     "z_mos_mediana": 0.679,
+     "z_mos_max": 4.057,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.471,
+     "ic95": [
+      0.007,
+      0.202
+     ]
+    }
+   },
+   "mecanismo": {
+    "n": 168,
+    "periodo_sustrato_mm": 5.542,
+    "frac_elige_periodo_inyectado": 0.393,
+    "frac_elige_periodo_del_sustrato": 0.333,
+    "n_detecciones": 7,
+    "frac_detecciones_con_periodo_correcto": 0.714,
+    "lectura": "si el juez elige mayoritariamente el periodo del SUSTRATO, el cuello es ENMASCARAMIENTO, no contraste: subir el lector no lo arregla"
+   }
+  },
+  "inco_0343": {
+   "z_estrella": 3.0,
+   "curva_c_nominal": {
+    "1.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.977,
+     "z_mos_max": 2.395,
+     "p_mos_min": 0.03,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.862
+    },
+    "1.5_nominal": {
+     "n": 24,
+     "detecta": 3,
+     "tasa": 0.125,
+     "z_mos_mediana": -1.507,
+     "z_mos_max": 4.679,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.288
+    },
+    "2.0_nominal": {
+     "n": 24,
+     "detecta": 1,
+     "tasa": 0.042,
+     "z_mos_mediana": -2.051,
+     "z_mos_max": 4.201,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.782
+    },
+    "2.5_nominal": {
+     "n": 24,
+     "detecta": 5,
+     "tasa": 0.208,
+     "z_mos_mediana": -1.007,
+     "z_mos_max": 7.171,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.208
+    },
+    "3.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.95,
+     "z_mos_max": 2.187,
+     "p_mos_min": 0.04,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.529
+    },
+    "4.0_nominal": {
+     "n": 24,
+     "detecta": 3,
+     "tasa": 0.125,
+     "z_mos_mediana": 0.302,
+     "z_mos_max": 9.189,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "6.0_nominal": {
+     "n": 12,
+     "detecta": 3,
+     "tasa": 0.25,
+     "z_mos_mediana": -0.693,
+     "z_mos_max": 10.757,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.268
+    },
+    "8.0_nominal": {
+     "n": 12,
+     "detecta": 2,
+     "tasa": 0.167,
+     "z_mos_mediana": -2.35,
+     "z_mos_max": 11.765,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.925
+    }
+   },
+   "curva_c_realizado": {
+    "0_1": {
+     "n": 20,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.786,
+     "z_mos_max": 1.491,
+     "p_mos_min": 0.08,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.801
+    },
+    "1_2": {
+     "n": 54,
+     "detecta": 3,
+     "tasa": 0.056,
+     "z_mos_mediana": -1.743,
+     "z_mos_max": 4.679,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.389
+    },
+    "2_3": {
+     "n": 45,
+     "detecta": 6,
+     "tasa": 0.133,
+     "z_mos_mediana": -1.301,
+     "z_mos_max": 7.171,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.368
+    },
+    "3_4": {
+     "n": 22,
+     "detecta": 3,
+     "tasa": 0.136,
+     "z_mos_mediana": 0.247,
+     "z_mos_max": 9.189,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "4_5": {
+     "n": 2,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": 0.571,
+     "z_mos_max": 2.15,
+     "p_mos_min": 0.025,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 4.49
+    },
+    "5_99": {
+     "n": 22,
+     "detecta": 5,
+     "tasa": 0.227,
+     "z_mos_mediana": -0.909,
+     "z_mos_max": 11.765,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.025
+    }
+   },
+   "por_periodo_inyectado": {
+    "P_2.4_5.0": {
+     "n": 20,
+     "detecta": 1,
+     "tasa": 0.05,
+     "z_mos_mediana": -2.872,
+     "z_mos_max": 3.694,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.06,
+     "tasa_c_nominal_ge_6": 0.5,
+     "c_realizado_mediano_c_ge_6": 5.901,
+     "n_c_ge_6": 2
+    },
+    "P_5.0_6.44": {
+     "n": 8,
+     "detecta": 1,
+     "tasa": 0.125,
+     "z_mos_mediana": -1.738,
+     "z_mos_max": 3.253,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.341,
+     "tasa_c_nominal_ge_6": 0.5,
+     "c_realizado_mediano_c_ge_6": 6.059,
+     "n_c_ge_6": 2
+    },
+    "P_6.44_8.0": {
+     "n": 140,
+     "detecta": 15,
+     "tasa": 0.107,
+     "z_mos_mediana": -1.31,
+     "z_mos_max": 11.765,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.225,
+     "tasa_c_nominal_ge_6": 0.15,
+     "c_realizado_mediano_c_ge_6": 5.493,
+     "n_c_ge_6": 20
+    }
+   },
+   "X_c_realizado_80": null,
+   "X_c_realizado_50": null,
+   "c_nominal_80": null,
+   "c_nominal_50": null,
+   "potencia_agregada": {
+    "c_real_<2": {
+     "n": 74,
+     "detecta": 3,
+     "tasa": 0.041,
+     "z_mos_mediana": -1.743,
+     "z_mos_max": 4.679,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.295,
+     "ic95": [
+      0.014,
+      0.113
+     ]
+    },
+    "c_real_2-4": {
+     "n": 67,
+     "detecta": 9,
+     "tasa": 0.134,
+     "z_mos_mediana": -0.952,
+     "z_mos_max": 9.189,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.538,
+     "ic95": [
+      0.072,
+      0.236
+     ]
+    },
+    "c_real_>=4": {
+     "n": 24,
+     "detecta": 5,
+     "tasa": 0.208,
+     "z_mos_mediana": -0.693,
+     "z_mos_max": 11.765,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.471,
+     "ic95": [
+      0.092,
+      0.405
+     ]
+    }
+   },
+   "mecanismo": {
+    "n": 168,
+    "periodo_sustrato_mm": 5.243,
+    "frac_elige_periodo_inyectado": 0.607,
+    "frac_elige_periodo_del_sustrato": 0.042,
+    "n_detecciones": 17,
+    "frac_detecciones_con_periodo_correcto": 0.941,
+    "lectura": "si el juez elige mayoritariamente el periodo del SUSTRATO, el cuello es ENMASCARAMIENTO, no contraste: subir el lector no lo arregla"
+   }
+  },
+  "inco_ancha": {
+   "z_estrella": 4.0,
+   "curva_c_nominal": {
+    "1.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.956,
+     "z_mos_max": 1.844,
+     "p_mos_min": 0.06,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.862
+    },
+    "1.5_nominal": {
+     "n": 24,
+     "detecta": 1,
+     "tasa": 0.042,
+     "z_mos_mediana": -0.863,
+     "z_mos_max": 4.554,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.288
+    },
+    "2.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.881,
+     "z_mos_max": 3.446,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.782
+    },
+    "2.5_nominal": {
+     "n": 24,
+     "detecta": 5,
+     "tasa": 0.208,
+     "z_mos_mediana": -1.132,
+     "z_mos_max": 8.245,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.208
+    },
+    "3.0_nominal": {
+     "n": 24,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -2.12,
+     "z_mos_max": 2.45,
+     "p_mos_min": 0.015,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.529
+    },
+    "4.0_nominal": {
+     "n": 24,
+     "detecta": 3,
+     "tasa": 0.125,
+     "z_mos_mediana": 1.611,
+     "z_mos_max": 7.741,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "6.0_nominal": {
+     "n": 12,
+     "detecta": 2,
+     "tasa": 0.167,
+     "z_mos_mediana": 0.35,
+     "z_mos_max": 10.427,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.268
+    },
+    "8.0_nominal": {
+     "n": 12,
+     "detecta": 2,
+     "tasa": 0.167,
+     "z_mos_mediana": -1.331,
+     "z_mos_max": 11.364,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.925
+    }
+   },
+   "curva_c_realizado": {
+    "0_1": {
+     "n": 20,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.956,
+     "z_mos_max": 1.429,
+     "p_mos_min": 0.085,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 0.801
+    },
+    "1_2": {
+     "n": 54,
+     "detecta": 1,
+     "tasa": 0.019,
+     "z_mos_mediana": -2.019,
+     "z_mos_max": 4.554,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.389
+    },
+    "2_3": {
+     "n": 45,
+     "detecta": 5,
+     "tasa": 0.111,
+     "z_mos_mediana": -1.413,
+     "z_mos_max": 8.245,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.368
+    },
+    "3_4": {
+     "n": 22,
+     "detecta": 3,
+     "tasa": 0.136,
+     "z_mos_mediana": 1.507,
+     "z_mos_max": 7.741,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 3.436
+    },
+    "4_5": {
+     "n": 2,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": 0.092,
+     "z_mos_max": 1.749,
+     "p_mos_min": 0.065,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 4.49
+    },
+    "5_99": {
+     "n": 22,
+     "detecta": 4,
+     "tasa": 0.182,
+     "z_mos_mediana": -0.256,
+     "z_mos_max": 11.364,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 6.025
+    }
+   },
+   "por_periodo_inyectado": {
+    "P_2.4_5.0": {
+     "n": 20,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.745,
+     "z_mos_max": 2.778,
+     "p_mos_min": 0.01,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.06,
+     "tasa_c_nominal_ge_6": 0.0,
+     "c_realizado_mediano_c_ge_6": 5.901,
+     "n_c_ge_6": 2
+    },
+    "P_5.0_6.44": {
+     "n": 8,
+     "detecta": 0,
+     "tasa": 0.0,
+     "z_mos_mediana": -1.808,
+     "z_mos_max": 2.614,
+     "p_mos_min": 0.02,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.341,
+     "tasa_c_nominal_ge_6": 0.0,
+     "c_realizado_mediano_c_ge_6": 6.059,
+     "n_c_ge_6": 2
+    },
+    "P_6.44_8.0": {
+     "n": 140,
+     "detecta": 13,
+     "tasa": 0.093,
+     "z_mos_mediana": -1.121,
+     "z_mos_max": 11.364,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.225,
+     "tasa_c_nominal_ge_6": 0.2,
+     "c_realizado_mediano_c_ge_6": 5.493,
+     "n_c_ge_6": 20
+    }
+   },
+   "X_c_realizado_80": null,
+   "X_c_realizado_50": null,
+   "c_nominal_80": null,
+   "c_nominal_50": null,
+   "potencia_agregada": {
+    "c_real_<2": {
+     "n": 74,
+     "detecta": 1,
+     "tasa": 0.014,
+     "z_mos_mediana": -1.956,
+     "z_mos_max": 4.554,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 1.295,
+     "ic95": [
+      0.002,
+      0.073
+     ]
+    },
+    "c_real_2-4": {
+     "n": 67,
+     "detecta": 8,
+     "tasa": 0.119,
+     "z_mos_mediana": -0.659,
+     "z_mos_max": 8.245,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 2.538,
+     "ic95": [
+      0.062,
+      0.218
+     ]
+    },
+    "c_real_>=4": {
+     "n": 24,
+     "detecta": 4,
+     "tasa": 0.167,
+     "z_mos_mediana": -0.256,
+     "z_mos_max": 11.364,
+     "p_mos_min": 0.005,
+     "banda_completa": 1.0,
+     "c_realizado_mediano": 5.471,
+     "ic95": [
+      0.067,
+      0.359
+     ]
+    }
+   },
+   "mecanismo": {
+    "n": 168,
+    "periodo_sustrato_mm": 6.441,
+    "frac_elige_periodo_inyectado": 0.685,
+    "frac_elige_periodo_del_sustrato": 0.065,
+    "n_detecciones": 13,
+    "frac_detecciones_con_periodo_correcto": 1.0,
+    "lectura": "si el juez elige mayoritariamente el periodo del SUSTRATO, el cuello es ENMASCARAMIENTO, no contraste: subir el lector no lo arregla"
+   }
+  }
+ },
+ "X_protocolo": {
+  "definicion": "X = c REALIZADO al que la potencia alcanza 0.80 sobre el sustrato real de 1203, con texto humano real y geometria medida. Si ninguna combinacion lo alcanza dentro de la rejilla, X > el mayor c realizado probado.",
+  "por_combinacion": {
+   "vara_0343": null,
+   "inco_0343": null,
+   "inco_ancha": null
+  },
+  "X": null,
+  "combinacion": null,
+  "c_realizado_max_probado": 7.154,
+  "potencia_en_el_tope": {
+   "vara_0343": {
+    "tasa": 0.042,
+    "n": 24,
+    "ic95": [
+     0.007,
+     0.202
+    ]
+   },
+   "inco_0343": {
+    "tasa": 0.208,
+    "n": 24,
+    "ic95": [
+     0.092,
+     0.405
+    ]
+   },
+   "inco_ancha": {
+    "tasa": 0.167,
+    "n": 24,
+    "ic95": [
+     0.067,
+     0.359
+    ]
+   }
+  },
+  "conclusion": "X > 7.15 en las TRES combinaciones: ninguna alcanza 0.80 ni 0.50 dentro de la rejilla. La potencia se estanca por debajo de 0.25 aun con el contraste mas alto probado."
+ }
+}

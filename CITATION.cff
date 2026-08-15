@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "Vesuvius Uncertainty Bench"
+message: >-
+  If you use this software or the derived labels, please cite the EduceLab-Scrolls
+  dataset (below) and acknowledge the Vesuvius Challenge as the source of the
+  underlying scans and of the ink-detection model outputs from which the labels
+  derive.
+type: software
+abstract: >-
+  Tools, a benchmark and a provenance audit for ink detection in Herculaneum
+  papyri above 100 keV: a surface renderer validated to correlation 1.00000 that
+  fetches only the exact chunk shell a surface touches, derived ink-label sets at
+  8.640 um/116 keV and 9.362 um/113 keV with a measured public-checkpoint
+  ceiling, and line-periodicity judges whose false-positive rate is bounded on
+  real substrate.
+license: MIT
+keywords:
+  - Herculaneum
+  - Vesuvius Challenge
+  - virtual unwrapping
+  - ink detection
+  - X-ray micro-CT
+  - benchmark
+  - statistical validation
+references:
+  - type: article
+    title: >-
+      EduceLab-Scrolls: Verifiable Recovery of Text from Herculaneum Papyri
+      using X-ray CT
+    year: 2023
+    identifiers:
+      - type: other
+        value: "arXiv:2304.02084"
+    authors:
+      - family-names: Parsons
+        given-names: Stephen
+      - family-names: Parker
+        given-names: C. Seth
+      - family-names: Chapman
+        given-names: Christy
+      - family-names: Hayashida
+        given-names: Mami
+      - family-names: Seales
+        given-names: W. Brent

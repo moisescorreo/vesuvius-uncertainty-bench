@@ -1,0 +1,752 @@
+{
+ "frente": "C2 \u2014 curacion de gold113",
+ "um_px": 9.362,
+ "tiers": {
+  "texto_limpio": [
+   "20250628074500",
+   "20250716055229"
+  ],
+  "texto_parcial": [
+   "20250611154256",
+   "20250611161415",
+   "20250611134135",
+   "20250716055232",
+   "20250611172135"
+  ],
+  "moteado": [],
+  "manchado": [
+   "20250611170257",
+   "20250716055231",
+   "20250611132918"
+  ],
+  "vacio": []
+ },
+ "resumen": {
+  "n": 10,
+  "valid_cm2": 87.89,
+  "tinta_mm2_128": 1023.4,
+  "letras_plausibles": 608
+ },
+ "por_segmento": [
+  {
+   "seg": "20250611170257",
+   "shape": [
+    8240,
+    6120
+   ],
+   "mm": [
+    77.14,
+    57.3
+   ],
+   "valid_frac": 0.2321,
+   "valid_mm2": 1025.8,
+   "bbox_mm2": 4419.9,
+   "frac_96": 0.19211,
+   "mm2_96": 197.1,
+   "frac_128": 0.15404,
+   "mm2_128": 158.0,
+   "frac_160": 0.12311,
+   "mm2_160": 126.3,
+   "frac_192": 0.09242,
+   "mm2_192": 94.8,
+   "morfologia": {
+    "n": 414,
+    "n_grandes": 279,
+    "frac_moteado": 0.0149,
+    "area_med_mm2": 0.2338,
+    "alto_med_mm": 0.599,
+    "ancho_med_mm": 0.59,
+    "elong_med": 1.23
+   },
+   "renglon": {
+    "periodo_mm": 10.99,
+    "ac_pico": 0.133,
+    "n_filas": 4192
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0172,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 11.66,
+    "halo_p95_px": 17.03,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 25.71,
+    "ancho_trazo_p90_um": 481.4
+   },
+   "letras_plausibles": 87,
+   "letra_alto_med_mm": 1.11,
+   "manchas": {
+    "n_comp": 414,
+    "comp_max_mm2": 14.7,
+    "frac_en_manchas_gt3mm2": 0.315,
+    "trazo_p90_um": 520.0,
+    "trazo_p50_um": 202.0
+   },
+   "huecos": {
+    "n_huecos": 92,
+    "n_ge50px": 89,
+    "px": 290175,
+    "frac_del_valido": 0.02479,
+    "lado_med_px": [
+     56.0,
+     56.0
+    ],
+    "lado_med_um": [
+     524.0,
+     524.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "manchado",
+   "tier_razon": "f128=0.1540 letras=87 ac=0.133 periodo=10.99mm per_ok=False frac_manchas=0.315 comp_max=14.7mm2"
+  },
+  {
+   "seg": "20250716055231",
+   "shape": [
+    5360,
+    3320
+   ],
+   "mm": [
+    50.18,
+    31.08
+   ],
+   "valid_frac": 0.5891,
+   "valid_mm2": 918.8,
+   "bbox_mm2": 1559.7,
+   "frac_96": 0.19798,
+   "mm2_96": 181.9,
+   "frac_128": 0.16086,
+   "mm2_128": 147.8,
+   "frac_160": 0.13042,
+   "mm2_160": 119.8,
+   "frac_192": 0.09961,
+   "mm2_192": 91.5,
+   "morfologia": {
+    "n": 361,
+    "n_grandes": 244,
+    "frac_moteado": 0.013,
+    "area_med_mm2": 0.2196,
+    "alto_med_mm": 0.571,
+    "ancho_med_mm": 0.548,
+    "elong_med": 1.26
+   },
+   "renglon": {
+    "periodo_mm": 10.26,
+    "ac_pico": 0.095,
+    "n_filas": 4705
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0216,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 10.82,
+    "halo_p95_px": 15.03,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 26.83,
+    "ancho_trazo_p90_um": 502.4
+   },
+   "letras_plausibles": 74,
+   "letra_alto_med_mm": 1.18,
+   "manchas": {
+    "n_comp": 361,
+    "comp_max_mm2": 8.7,
+    "frac_en_manchas_gt3mm2": 0.385,
+    "trazo_p90_um": 533.0,
+    "trazo_p50_um": 209.0
+   },
+   "huecos": {
+    "n_huecos": 68,
+    "n_ge50px": 66,
+    "px": 150727,
+    "frac_del_valido": 0.01438,
+    "lado_med_px": [
+     46.5,
+     47.0
+    ],
+    "lado_med_um": [
+     435.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "manchado",
+   "tier_razon": "f128=0.1609 letras=74 ac=0.095 periodo=10.26mm per_ok=False frac_manchas=0.385 comp_max=8.7mm2"
+  },
+  {
+   "seg": "20250611132918",
+   "shape": [
+    5040,
+    3260
+   ],
+   "mm": [
+    47.18,
+    30.52
+   ],
+   "valid_frac": 0.596,
+   "valid_mm2": 858.3,
+   "bbox_mm2": 1440.1,
+   "frac_96": 0.21369,
+   "mm2_96": 183.4,
+   "frac_128": 0.17186,
+   "mm2_128": 147.5,
+   "frac_160": 0.13754,
+   "mm2_160": 118.1,
+   "frac_192": 0.1032,
+   "mm2_192": 88.6,
+   "morfologia": {
+    "n": 369,
+    "n_grandes": 239,
+    "frac_moteado": 0.016,
+    "area_med_mm2": 0.2414,
+    "alto_med_mm": 0.599,
+    "ancho_med_mm": 0.618,
+    "elong_med": 1.24
+   },
+   "renglon": {
+    "periodo_mm": 5.03,
+    "ac_pico": -0.004,
+    "n_filas": 4216
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0192,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 11.18,
+    "halo_p95_px": 15.65,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 26.42,
+    "ancho_trazo_p90_um": 494.7
+   },
+   "letras_plausibles": 76,
+   "letra_alto_med_mm": 1.12,
+   "manchas": {
+    "n_comp": 369,
+    "comp_max_mm2": 11.2,
+    "frac_en_manchas_gt3mm2": 0.442,
+    "trazo_p90_um": 533.0,
+    "trazo_p50_um": 203.0
+   },
+   "huecos": {
+    "n_huecos": 59,
+    "n_ge50px": 59,
+    "px": 138827,
+    "frac_del_valido": 0.01418,
+    "lado_med_px": [
+     47.0,
+     47.0
+    ],
+    "lado_med_um": [
+     440.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "manchado",
+   "tier_razon": "f128=0.1719 letras=76 ac=-0.004 periodo=5.03mm per_ok=False frac_manchas=0.442 comp_max=11.2mm2"
+  },
+  {
+   "seg": "20250611154256",
+   "shape": [
+    5360,
+    3560
+   ],
+   "mm": [
+    50.18,
+    33.33
+   ],
+   "valid_frac": 0.5626,
+   "valid_mm2": 941.0,
+   "bbox_mm2": 1672.4,
+   "frac_96": 0.15248,
+   "mm2_96": 143.5,
+   "frac_128": 0.12053,
+   "mm2_128": 113.4,
+   "frac_160": 0.09545,
+   "mm2_160": 89.8,
+   "frac_192": 0.07097,
+   "mm2_192": 66.8,
+   "morfologia": {
+    "n": 356,
+    "n_grandes": 239,
+    "frac_moteado": 0.0211,
+    "area_med_mm2": 0.2054,
+    "alto_med_mm": 0.552,
+    "ancho_med_mm": 0.552,
+    "elong_med": 1.27
+   },
+   "renglon": {
+    "periodo_mm": 7.34,
+    "ac_pico": 0.251,
+    "n_filas": 4458
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0264,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 11.0,
+    "halo_p95_px": 15.52,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 25.24,
+    "ancho_trazo_p90_um": 472.6
+   },
+   "letras_plausibles": 73,
+   "letra_alto_med_mm": 1.17,
+   "manchas": {
+    "n_comp": 356,
+    "comp_max_mm2": 7.2,
+    "frac_en_manchas_gt3mm2": 0.245,
+    "trazo_p90_um": 504.0,
+    "trazo_p50_um": 187.0
+   },
+   "huecos": {
+    "n_huecos": 62,
+    "n_ge50px": 61,
+    "px": 181366,
+    "frac_del_valido": 0.01689,
+    "lado_med_px": [
+     47.0,
+     47.0
+    ],
+    "lado_med_um": [
+     440.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.1205 letras=73 ac=0.251 periodo=7.34mm per_ok=True frac_manchas=0.245 comp_max=7.2mm2"
+  },
+  {
+   "seg": "20250611161415",
+   "shape": [
+    4780,
+    2960
+   ],
+   "mm": [
+    44.75,
+    27.71
+   ],
+   "valid_frac": 0.6741,
+   "valid_mm2": 835.9,
+   "bbox_mm2": 1240.1,
+   "frac_96": 0.14273,
+   "mm2_96": 119.3,
+   "frac_128": 0.10947,
+   "mm2_128": 91.5,
+   "frac_160": 0.0834,
+   "mm2_160": 69.7,
+   "frac_192": 0.05855,
+   "mm2_192": 48.9,
+   "morfologia": {
+    "n": 341,
+    "n_grandes": 239,
+    "frac_moteado": 0.0206,
+    "area_med_mm2": 0.1962,
+    "alto_med_mm": 0.534,
+    "ancho_med_mm": 0.543,
+    "elong_med": 1.29
+   },
+   "renglon": {
+    "periodo_mm": 7.17,
+    "ac_pico": 0.157,
+    "n_filas": 4467
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.027,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 11.4,
+    "halo_p95_px": 16.12,
+    "halo_p50_um": 46.8,
+    "semiancho_trazo_p90_px": 21.02,
+    "ancho_trazo_p90_um": 393.6
+   },
+   "letras_plausibles": 62,
+   "letra_alto_med_mm": 1.12,
+   "manchas": {
+    "n_comp": 341,
+    "comp_max_mm2": 5.7,
+    "frac_en_manchas_gt3mm2": 0.063,
+    "trazo_p90_um": 427.0,
+    "trazo_p50_um": 170.0
+   },
+   "huecos": {
+    "n_huecos": 49,
+    "n_ge50px": 49,
+    "px": 111543,
+    "frac_del_valido": 0.0117,
+    "lado_med_px": [
+     47.0,
+     47.0
+    ],
+    "lado_med_um": [
+     440.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.1095 letras=62 ac=0.157 periodo=7.17mm per_ok=True frac_manchas=0.063 comp_max=5.7mm2"
+  },
+  {
+   "seg": "20250628074500",
+   "shape": [
+    6280,
+    3580
+   ],
+   "mm": [
+    58.79,
+    33.52
+   ],
+   "valid_frac": 0.6271,
+   "valid_mm2": 1235.7,
+   "bbox_mm2": 1970.5,
+   "frac_96": 0.08879,
+   "mm2_96": 109.7,
+   "frac_128": 0.07274,
+   "mm2_128": 89.9,
+   "frac_160": 0.05986,
+   "mm2_160": 74.0,
+   "frac_192": 0.04546,
+   "mm2_192": 56.2,
+   "morfologia": {
+    "n": 408,
+    "n_grandes": 218,
+    "frac_moteado": 0.0283,
+    "area_med_mm2": 0.1894,
+    "alto_med_mm": 0.506,
+    "ancho_med_mm": 0.552,
+    "elong_med": 1.29
+   },
+   "renglon": {
+    "periodo_mm": 6.84,
+    "ac_pico": 0.236,
+    "n_filas": 5493
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0397,
+    "halo_p50_px": 3.16,
+    "halo_p90_px": 9.0,
+    "halo_p95_px": 12.17,
+    "halo_p50_um": 29.6,
+    "semiancho_trazo_p90_px": 24.0,
+    "ancho_trazo_p90_um": 449.4
+   },
+   "letras_plausibles": 57,
+   "letra_alto_med_mm": 1.26,
+   "manchas": {
+    "n_comp": 408,
+    "comp_max_mm2": 3.0,
+    "frac_en_manchas_gt3mm2": 0.034,
+    "trazo_p90_um": 468.0,
+    "trazo_p50_um": 178.0
+   },
+   "huecos": {
+    "n_huecos": 25,
+    "n_ge50px": 14,
+    "px": 29562,
+    "frac_del_valido": 0.0021,
+    "lado_med_px": [
+     27.0,
+     41.5
+    ],
+    "lado_med_um": [
+     253.0,
+     389.0
+    ],
+    "cuadrados": false,
+    "diagnostico": "huecos irregulares (probable hueco real de malla)"
+   },
+   "tier": "texto_limpio",
+   "tier_razon": "f128=0.0727 letras=57 ac=0.236 periodo=6.84mm per_ok=True frac_manchas=0.034 comp_max=3.0mm2"
+  },
+  {
+   "seg": "20250611134135",
+   "shape": [
+    5420,
+    3280
+   ],
+   "mm": [
+    50.74,
+    30.71
+   ],
+   "valid_frac": 0.5282,
+   "valid_mm2": 823.1,
+   "bbox_mm2": 1558.2,
+   "frac_96": 0.11796,
+   "mm2_96": 97.1,
+   "frac_128": 0.09013,
+   "mm2_128": 74.2,
+   "frac_160": 0.06934,
+   "mm2_160": 57.1,
+   "frac_192": 0.04967,
+   "mm2_192": 40.9,
+   "morfologia": {
+    "n": 304,
+    "n_grandes": 199,
+    "frac_moteado": 0.0255,
+    "area_med_mm2": 0.1838,
+    "alto_med_mm": 0.534,
+    "ancho_med_mm": 0.506,
+    "elong_med": 1.23
+   },
+   "renglon": {
+    "periodo_mm": 10.85,
+    "ac_pico": 0.093,
+    "n_filas": 4484
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0367,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 11.4,
+    "halo_p95_px": 16.76,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 21.26,
+    "ancho_trazo_p90_um": 398.1
+   },
+   "letras_plausibles": 51,
+   "letra_alto_med_mm": 1.09,
+   "manchas": {
+    "n_comp": 304,
+    "comp_max_mm2": 4.4,
+    "frac_en_manchas_gt3mm2": 0.198,
+    "trazo_p90_um": 425.0,
+    "trazo_p50_um": 169.0
+   },
+   "huecos": {
+    "n_huecos": 104,
+    "n_ge50px": 56,
+    "px": 161789,
+    "frac_del_valido": 0.01723,
+    "lado_med_px": [
+     48.5,
+     47.0
+    ],
+    "lado_med_um": [
+     454.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0901 letras=51 ac=0.093 periodo=10.85mm per_ok=False frac_manchas=0.198 comp_max=4.4mm2"
+  },
+  {
+   "seg": "20250716055232",
+   "shape": [
+    5020,
+    3480
+   ],
+   "mm": [
+    47.0,
+    32.58
+   ],
+   "valid_frac": 0.5382,
+   "valid_mm2": 824.0,
+   "bbox_mm2": 1531.2,
+   "frac_96": 0.11348,
+   "mm2_96": 93.5,
+   "frac_128": 0.08928,
+   "mm2_128": 73.6,
+   "frac_160": 0.07043,
+   "mm2_160": 58.0,
+   "frac_192": 0.0521,
+   "mm2_192": 42.9,
+   "morfologia": {
+    "n": 276,
+    "n_grandes": 202,
+    "frac_moteado": 0.0188,
+    "area_med_mm2": 0.2085,
+    "alto_med_mm": 0.534,
+    "ancho_med_mm": 0.515,
+    "elong_med": 1.22
+   },
+   "renglon": {
+    "periodo_mm": 7.93,
+    "ac_pico": 0.111,
+    "n_filas": 4310
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0272,
+    "halo_p50_px": 4.24,
+    "halo_p90_px": 10.44,
+    "halo_p95_px": 15.13,
+    "halo_p50_um": 39.7,
+    "semiancho_trazo_p90_px": 23.0,
+    "ancho_trazo_p90_um": 430.7
+   },
+   "letras_plausibles": 48,
+   "letra_alto_med_mm": 1.16,
+   "manchas": {
+    "n_comp": 276,
+    "comp_max_mm2": 4.6,
+    "frac_en_manchas_gt3mm2": 0.062,
+    "trazo_p90_um": 453.0,
+    "trazo_p50_um": 178.0
+   },
+   "huecos": {
+    "n_huecos": 54,
+    "n_ge50px": 51,
+    "px": 122082,
+    "frac_del_valido": 0.01298,
+    "lado_med_px": [
+     51.0,
+     47.0
+    ],
+    "lado_med_um": [
+     477.0,
+     440.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0893 letras=48 ac=0.111 periodo=7.93mm per_ok=False frac_manchas=0.062 comp_max=4.6mm2"
+  },
+  {
+   "seg": "20250611172135",
+   "shape": [
+    5140,
+    3040
+   ],
+   "mm": [
+    48.12,
+    28.46
+   ],
+   "valid_frac": 0.5609,
+   "valid_mm2": 768.2,
+   "bbox_mm2": 1369.5,
+   "frac_96": 0.10787,
+   "mm2_96": 82.9,
+   "frac_128": 0.08366,
+   "mm2_128": 64.3,
+   "frac_160": 0.06469,
+   "mm2_160": 49.7,
+   "frac_192": 0.04637,
+   "mm2_192": 35.6,
+   "morfologia": {
+    "n": 254,
+    "n_grandes": 182,
+    "frac_moteado": 0.0224,
+    "area_med_mm2": 0.1899,
+    "alto_med_mm": 0.529,
+    "ancho_med_mm": 0.524,
+    "elong_med": 1.19
+   },
+   "renglon": {
+    "periodo_mm": 7.31,
+    "ac_pico": 0.071,
+    "n_filas": 4521
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0278,
+    "halo_p50_px": 4.47,
+    "halo_p90_px": 10.63,
+    "halo_p95_px": 14.87,
+    "halo_p50_um": 41.8,
+    "semiancho_trazo_p90_px": 22.2,
+    "ancho_trazo_p90_um": 415.7
+   },
+   "letras_plausibles": 38,
+   "letra_alto_med_mm": 1.24,
+   "manchas": {
+    "n_comp": 254,
+    "comp_max_mm2": 4.8,
+    "frac_en_manchas_gt3mm2": 0.124,
+    "trazo_p90_um": 449.0,
+    "trazo_p50_um": 173.0
+   },
+   "huecos": {
+    "n_huecos": 52,
+    "n_ge50px": 50,
+    "px": 119703,
+    "frac_del_valido": 0.01366,
+    "lado_med_px": [
+     51.5,
+     52.0
+    ],
+    "lado_med_um": [
+     482.0,
+     487.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0837 letras=38 ac=0.071 periodo=7.31mm per_ok=True frac_manchas=0.124 comp_max=4.8mm2"
+  },
+  {
+   "seg": "20250716055229",
+   "shape": [
+    5120,
+    1880
+   ],
+   "mm": [
+    47.93,
+    17.6
+   ],
+   "valid_frac": 0.6619,
+   "valid_mm2": 558.4,
+   "bbox_mm2": 843.7,
+   "frac_96": 0.13386,
+   "mm2_96": 74.7,
+   "frac_128": 0.11314,
+   "mm2_128": 63.2,
+   "frac_160": 0.0963,
+   "mm2_160": 53.8,
+   "frac_192": 0.07908,
+   "mm2_192": 44.2,
+   "morfologia": {
+    "n": 132,
+    "n_grandes": 97,
+    "frac_moteado": 0.0114,
+    "area_med_mm2": 0.3948,
+    "alto_med_mm": 0.758,
+    "ancho_med_mm": 0.768,
+    "elong_med": 1.37
+   },
+   "renglon": {
+    "periodo_mm": 6.76,
+    "ac_pico": 0.346,
+    "n_filas": 4760
+   },
+   "banda": {
+    "frac_lo96_sin_nucleo160": 0.0159,
+    "halo_p50_px": 4.0,
+    "halo_p90_px": 10.0,
+    "halo_p95_px": 14.87,
+    "halo_p50_um": 37.4,
+    "semiancho_trazo_p90_px": 26.93,
+    "ancho_trazo_p90_um": 504.2
+   },
+   "letras_plausibles": 42,
+   "letra_alto_med_mm": 1.32,
+   "manchas": {
+    "n_comp": 132,
+    "comp_max_mm2": 2.9,
+    "frac_en_manchas_gt3mm2": 0.0,
+    "trazo_p90_um": 529.0,
+    "trazo_p50_um": 225.0
+   },
+   "huecos": {
+    "n_huecos": 53,
+    "n_ge50px": 52,
+    "px": 157530,
+    "frac_del_valido": 0.02473,
+    "lado_med_px": [
+     53.5,
+     51.5
+    ],
+    "lado_med_um": [
+     501.0,
+     482.0
+    ],
+    "cuadrados": true,
+    "diagnostico": "TILES CAIDOS de la inferencia: ignorar obligatorio"
+   },
+   "tier": "texto_limpio",
+   "tier_razon": "f128=0.1131 letras=42 ac=0.346 periodo=6.76mm per_ok=True frac_manchas=0.0 comp_max=2.9mm2"
+  }
+ ]
+}

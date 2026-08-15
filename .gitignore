@@ -1,0 +1,18 @@
+# Rendered surface volumes and downloaded CT chunks are derived, never committed.
+work/
+out/
+*.npy
+!labels/**/*.npy
+cache/
+chunks/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# OS
+.DS_Store

@@ -1,0 +1,80 @@
+# Data licence for `labels/`
+
+**Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
+
+Full text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+Summary:   https://creativecommons.org/licenses/by-nc/4.0/
+
+This licence applies to the contents of the `labels/` directory only
+(`gold116/*.npz`, `gold113/*.npz`, and the accompanying manifests). The source
+code of this repository is licensed separately under the MIT Licence — see
+`../LICENSE`.
+
+---
+
+## What these files are
+
+`gold116/` and `gold113/` contain **derived** ink-probability labels: single
+`uint8` arrays per segment, resampled onto the coarse (116 keV / 113 keV)
+surface-volume grid from ink predictions published by the Vesuvius Challenge on
+the corresponding fine-resolution scans. They contain **no scroll CT data** and
+no reconstruction of any scroll volume.
+
+They are a transformation of two upstream sources:
+
+1. **EduceLab-Scrolls** — the X-ray micro-CT scan data of the Herculaneum
+   papyri, from which the surface volumes and meshes derive.
+2. **Vesuvius Challenge open data** — the published ink-detection model outputs
+   (model checkpoint `20260417190342`, recipe `new_canon_autoresearch_recipe`)
+   and the `tifxyz` meshes used to place them on the coarse grid.
+
+Because these are derivative works, **the terms of both upstream sources apply
+in addition to this licence**, and where they are more restrictive, they
+govern. In particular, redistribution and use of Vesuvius Challenge data are
+subject to the **Vesuvius Challenge data agreement and contest terms** that
+each user accepts when obtaining access to the open data
+(https://scrollprize.org/data — see also https://scrollprize.org/terms). If you
+have not accepted those terms, you are not licensed to use the upstream data,
+and this licence cannot grant you that right.
+
+Nothing here is an assertion of ownership over the underlying scans, the
+underlying model outputs, or the physical artefacts.
+
+## Required attribution
+
+Any use must cite the EduceLab-Scrolls dataset:
+
+> Parsons, S., Parker, C. S., Chapman, C., Hayashida, M., & Seales, W. B.
+> (2023). *EduceLab-Scrolls: Verifiable Recovery of Text from Herculaneum
+> Papyri using X-ray CT.* arXiv:2304.02084.
+
+```bibtex
+@misc{parsons2023educelab,
+  title         = {EduceLab-Scrolls: Verifiable Recovery of Text from
+                   Herculaneum Papyri using X-ray CT},
+  author        = {Parsons, Stephen and Parker, C. Seth and Chapman, Christy
+                   and Hayashida, Mami and Seales, W. Brent},
+  year          = {2023},
+  eprint        = {2304.02084},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+```
+
+and should acknowledge the Vesuvius Challenge as the source of the underlying
+scans and of the ink-detection model outputs from which these labels derive.
+
+## Non-commercial
+
+`NC` here follows the upstream posture of the Herculaneum material. If you need
+a commercial use, obtain permission from the upstream rights holders — this
+repository cannot grant it.
+
+## Honest description of what you are getting
+
+These labels are **model output, not human ground truth**, and they were
+produced by a generator running outside its calibration regime. The full
+provenance audit is in `../audit/REPORT.md`; the measured quality caveats
+(blob merging in `gold113`, dropped inference tiles, non-binary thresholds) are
+in `../benchmark/README.md`. Use them as a benchmark of *agreement with the
+current public state of the art*, not as truth.

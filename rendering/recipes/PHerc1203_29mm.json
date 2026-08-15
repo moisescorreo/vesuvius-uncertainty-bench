@@ -1,0 +1,36 @@
+{
+  "name": "PHerc1203_29mm",
+  "description": "The largest contiguous flattened surface we could derive from a Grand-Prize scroll: 29.21 x 29.58 mm, one connected component, zero holes. Derived entirely from the public bucket; no data is redistributed with this recipe.",
+  "sample": "PHerc1203",
+  "energy_keV": 113,
+  "voxel_um": 9.362,
+  "mesh_prefix": "PHerc1203/segments/raw/auto_grown_20251005230830031",
+  "volume_prefix": "PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr",
+  "volume_shape": [18977, 6844, 6844],
+  "volume_bytes": 888916396112,
+  "num_slices": 31,
+  "slice_step": 1.0,
+  "flip_normals": true,
+  "render_scale": 1.0,
+  "tile": 256,
+  "threads": 16,
+  "expected": {
+    "canvas": [31, 4640, 5360],
+    "canvas_mm": [43.44, 50.18],
+    "output_bytes": 770790400,
+    "chunks_fetched": 2378,
+    "download_GB": 4.98,
+    "download_fraction_of_volume": 0.0056,
+    "wall_minutes_reference": 8.4,
+    "frac_valid": 0.680,
+    "largest_rectangle_mm": [29.21, 29.58],
+    "valid_area_mm2": 1483,
+    "connected_components": 1,
+    "internal_holes": 0
+  },
+  "notes": [
+    "The tifxyz prediction of the patch size was accurate to 0.2 mm, not the ~1 mm we had assumed. That accuracy is what let us reject meshes #2 and #3 (predicted 24.0 and 23.4 mm) without paying to render them.",
+    "The z-profile argmax sits off centre. This is the physics of a 31-layer stack, verified on the official PHerc0343P renders too, not a registration failure.",
+    "This surface is the substrate on which the 113 keV power curves in validation/ were measured."
+  ]
+}

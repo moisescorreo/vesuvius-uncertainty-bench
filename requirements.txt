@@ -1,0 +1,21 @@
+# Vesuvius Uncertainty Bench — pinned runtime.
+# Python 3.11+ (developed and validated on CPython 3.14.4).
+#
+# The four required wheels are pure-python or manylinux/macos universal;
+# `pip install -r requirements.txt` reproduces the environment in <1 min,
+# which is why this repository ships no Docker image (see README, Reproducibility).
+
+# --- required -------------------------------------------------------------
+numpy==2.5.2            # arrays, statistics; all judges and metrics
+scipy==1.18.0           # FFT, ndimage, distance transforms, statistics
+zarr==3.3.0             # OME-Zarr access to public CT volumes
+numcodecs==0.16.5       # zarr codecs (pinned: zarr 3.x is sensitive to this)
+requests==2.34.2        # HTTP range reads against the public data bucket
+tifffile==2026.7.31     # tifxyz mesh grids (x/y/z .tif) and label TIFFs
+
+# --- optional -------------------------------------------------------------
+# Only needed for the figure helpers (`--figure` flags). Nothing in the
+# claim-reproducing path imports matplotlib.
+matplotlib==3.11.1      ; extra == "figures"
+# Only needed for `scripts/build_labels.py --rebuild` (INTER_AREA resize).
+opencv-python-headless==5.0.0.93  ; extra == "rebuild"

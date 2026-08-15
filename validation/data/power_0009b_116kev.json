@@ -1,0 +1,818 @@
+{
+ "__constancia__": "CALIBRACION sobre el sustrato de PHerc0009B + inyeccion sintetica. NO se corre el lector sobre 0009B, NO se juzga texto de 0009B. Decide el MOSAICO (z_mos, p_mos).",
+ "fecha_utc": "2026-08-15T05:42:17Z",
+ "sustrato": {
+  "render": "<local>/phc0009b",
+  "nombre": "20250919123506",
+  "um_px": 8.64,
+  "celda_px": 16,
+  "mm_por_celda": 0.13824,
+  "celdas": [
+   465,
+   382
+  ],
+  "frac_valida_celdas": 0.6657,
+  "mascara": "efectiva (validez de malla AND media_z>0)",
+  "rect_efectivo_mm": [
+   44.41,
+   30.84
+  ]
+ },
+ "ventana": {
+  "lado_celdas": 210,
+  "lado_mm": 29.03,
+  "cob_min": 0.99,
+  "pool": 14117,
+  "dispersas": 60,
+  "solape_dispersas": {
+   "iou_medio": 0.4401,
+   "iou_mediano": 0.423,
+   "iou_max": 0.7806,
+   "dist_min_celdas": 25.0
+  },
+  "censo": {
+   "lado_29.03mm": {
+    "cob_0.99": {
+     "pool": 14117,
+     "no_solapadas": 1
+    },
+    "cob_0.95": {
+     "pool": 20874,
+     "no_solapadas": 1
+    },
+    "cob_0.9": {
+     "pool": 26952,
+     "no_solapadas": 2
+    },
+    "dentro_rect_efectivo": {
+     "posiciones": 1568,
+     "no_solapadas": 1
+    }
+   },
+   "lado_30.0mm": {
+    "cob_0.99": {
+     "pool": 12420,
+     "no_solapadas": 1
+    },
+    "cob_0.95": {
+     "pool": 18942,
+     "no_solapadas": 1
+    },
+    "cob_0.9": {
+     "pool": 24842,
+     "no_solapadas": 2
+    },
+    "dentro_rect_efectivo": {
+     "posiciones": 735,
+     "no_solapadas": 1
+    }
+   }
+  }
+ },
+ "jueces": {
+  "banda_mm": [
+   2.4,
+   8.0
+  ],
+  "min_periodos": {
+   "vara": 3.5,
+   "inco": 3.0
+  },
+  "alcance_mm": {
+   "vara": 8.29,
+   "inco": 9.68
+  },
+  "n_perm": 199,
+  "n_mos": 199,
+  "piso_p": 0.005,
+  "p_claim": 0.01,
+  "decide": "mosaico (z_mos, p_mos)",
+  "regla_z": "ceil(max z_mos de los nulos de ESTA forma) + 1"
+ },
+ "inyeccion": {
+  "donante": {
+   "__que_es__": "tiras de UN interlineado con la respuesta REAL del lector s43_040k (o7) sobre texto real de gold113-limpio, remuestreadas a la escala fisica de 0009B (0.13824 mm/celda)",
+   "lector": "s43_040k",
+   "off": "o7",
+   "mm_celda_donante": 0.149792,
+   "mm_celda_0009b": 0.13824,
+   "factor_escala": 1.08356,
+   "n_tiras": 7,
+   "frac_texto_media": 0.0824,
+   "segmentos": {
+    "20250628074500": {
+     "shape": [
+      392,
+      223
+     ],
+     "frac_usar": 0.5457,
+     "frac_texto": 0.0621,
+     "media_texto": 0.4729,
+     "media_fondo": 0.3328,
+     "sd_robusta_fondo": 0.0389,
+     "c_donante": 3.6006,
+     "geo": {
+      "ok": true,
+      "angulo": -11.0,
+      "lag": 43,
+      "periodo_mm": 6.441,
+      "calidad": 0.4269,
+      "n_lineas": 5,
+      "interlinea_mm": 6.441,
+      "cv": 0.374
+     },
+     "usado": true,
+     "n_tiras": 5,
+     "periodo_cel_0009b": 46.59
+    },
+    "20250716055229": {
+     "shape": [
+      320,
+      117
+     ],
+     "frac_usar": 0.5185,
+     "frac_texto": 0.1028,
+     "media_texto": 0.4275,
+     "media_fondo": 0.3291,
+     "sd_robusta_fondo": 0.0366,
+     "c_donante": 2.6908,
+     "geo": {
+      "ok": true,
+      "angulo": -15.0,
+      "lag": 44,
+      "periodo_mm": 6.591,
+      "calidad": 0.6709,
+      "n_lineas": 4,
+      "interlinea_mm": 6.741,
+      "cv": 0.028
+     },
+     "usado": true,
+     "n_tiras": 2,
+     "periodo_cel_0009b": 47.68
+    }
+   }
+  },
+  "interlinea_mm": [
+   6.3,
+   7.0
+  ],
+  "interlinea_escriba_foto_mm": 10.163,
+  "soporte_celdas": 2,
+  "contrastes": [
+   1.5,
+   2.0,
+   2.6,
+   3.0,
+   4.0
+  ],
+  "c_lector": {
+   "central_gold113": 2.59,
+   "optimista_gold116_holdout": 2.96
+  },
+  "brazos": {
+   "tex": "PRIMARIO textura real recortada al soporte",
+   "limpio": "CONTRASTE amplitud constante",
+   "full": "DIAGNOSTICO textura sin recortar",
+   "escriba10": "DECLARATIVO periodo 10.163 mm"
+  }
+ },
+ "n_corridas": 364,
+ "config_lector_declarada": {
+  "ckpt": "s43_040k congelado (cache/energia/ink9um/ckpt/)",
+  "para_0009b_8_64um": "config de gold116-holdout: remuestreo 'xyz', dz -2 (declarado, NO ejecutado: el gate impide correr el lector)",
+  "donante_de_textura": "gold113 nativo (f=1, o=7), que es donde existen mapas de respuesta ya calculados sobre texto real (cache/r19/predc/)",
+  "c_medido": {
+   "gold116_holdout_n1": 2.96,
+   "gold113_n2": 2.59
+  },
+  "nota": "la textura aporta la FORMA de la respuesta; la amplitud se re-escala al c del eje, asi que la diferencia de energia entre donante y objetivo no entra por la amplitud"
+ },
+ "H0": {
+  "vara_media": {
+   "n": 48,
+   "z_mos_media": -0.763,
+   "z_mos_sd": 0.955,
+   "z_mos_max": 2.034,
+   "z_mos_p95": 0.709,
+   "z_perm_max": 14.564,
+   "p_mos_min": 0.045,
+   "fpr_z4_p01": 0.0,
+   "fpr_zstar": 0.0,
+   "fpr_zstar_cota95": 0.0625,
+   "z_estrella": 4.0,
+   "banda_completa": true
+  },
+  "inco_media": {
+   "n": 48,
+   "z_mos_media": -1.066,
+   "z_mos_sd": 1.155,
+   "z_mos_max": 1.674,
+   "z_mos_p95": 0.499,
+   "z_perm_max": 9.641,
+   "p_mos_min": 0.06,
+   "fpr_z4_p01": 0.0,
+   "fpr_zstar": 0.0,
+   "fpr_zstar_cota95": 0.0625,
+   "z_estrella": 3.0,
+   "banda_completa": true
+  },
+  "vara_sd": {
+   "n": 24,
+   "z_mos_media": -0.561,
+   "z_mos_sd": 0.799,
+   "z_mos_max": 1.267,
+   "z_mos_p95": 0.799,
+   "z_perm_max": 15.114,
+   "p_mos_min": 0.135,
+   "fpr_z4_p01": 0.0,
+   "fpr_zstar": 0.0,
+   "fpr_zstar_cota95": 0.125,
+   "z_estrella": 3.0,
+   "banda_completa": true
+  },
+  "inco_sd": {
+   "n": 24,
+   "z_mos_media": -1.09,
+   "z_mos_sd": 0.717,
+   "z_mos_max": 0.275,
+   "z_mos_p95": 0.101,
+   "z_perm_max": 3.69,
+   "p_mos_min": 0.39,
+   "fpr_z4_p01": 0.0,
+   "fpr_zstar": 0.0,
+   "fpr_zstar_cota95": 0.125,
+   "z_estrella": 2.0,
+   "banda_completa": true
+  }
+ },
+ "z_estrella": {
+  "vara_media": 4.0,
+  "inco_media": 3.0,
+  "vara_sd": 3.0,
+  "inco_sd": 2.0
+ },
+ "curvas": {
+  "tex_media_vara": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.0417,
+    0.0,
+    0.0833,
+    0.0417,
+    0.1667
+   ],
+   "n": [
+    24,
+    24,
+    24,
+    24,
+    24
+   ],
+   "c_realizado_medio": [
+    1.522,
+    1.999,
+    2.609,
+    3.031,
+    3.971
+   ],
+   "z_estrella": 4.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    0.31,
+    0.33,
+    0.99,
+    1.74,
+    1.82
+   ]
+  },
+  "tex_media_inco": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.0,
+    0.0417,
+    0.0833,
+    0.0833,
+    0.375
+   ],
+   "n": [
+    24,
+    24,
+    24,
+    24,
+    24
+   ],
+   "c_realizado_medio": [
+    1.522,
+    1.999,
+    2.609,
+    3.031,
+    3.971
+   ],
+   "z_estrella": 3.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    -0.37,
+    -0.24,
+    1.5,
+    1.06,
+    2.14
+   ]
+  },
+  "tex_sd_vara": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.0833,
+    0.0,
+    0.1667,
+    0.0833,
+    0.25
+   ],
+   "n": [
+    12,
+    12,
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.575,
+    1.983,
+    2.64,
+    3.061,
+    3.933
+   ],
+   "z_estrella": 3.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    0.72,
+    0.0,
+    1.56,
+    1.49,
+    1.84
+   ]
+  },
+  "tex_sd_inco": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.25,
+    0.0833,
+    0.25,
+    0.0833,
+    0.25
+   ],
+   "n": [
+    12,
+    12,
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.575,
+    1.983,
+    2.64,
+    3.061,
+    3.933
+   ],
+   "z_estrella": 2.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    1.28,
+    0.54,
+    1.42,
+    0.82,
+    1.94
+   ]
+  },
+  "limpio_media_vara": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.0,
+    0.0,
+    0.0833,
+    0.0833,
+    0.3333
+   ],
+   "n": [
+    12,
+    12,
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.521,
+    2.018,
+    2.666,
+    2.992,
+    3.928
+   ],
+   "z_estrella": 4.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    -0.22,
+    0.08,
+    0.47,
+    0.56,
+    2.84
+   ]
+  },
+  "limpio_media_inco": {
+   "c": [
+    1.5,
+    2.0,
+    2.6,
+    3.0,
+    4.0
+   ],
+   "potencia": [
+    0.0,
+    0.0,
+    0.1667,
+    0.1667,
+    0.25
+   ],
+   "n": [
+    12,
+    12,
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.521,
+    2.018,
+    2.666,
+    2.992,
+    3.928
+   ],
+   "z_estrella": 3.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    -0.41,
+    -0.05,
+    0.44,
+    0.89,
+    2.47
+   ]
+  },
+  "full_media_vara": {
+   "c": [
+    2.0,
+    2.6,
+    4.0
+   ],
+   "potencia": [
+    0.0,
+    0.0833,
+    0.0
+   ],
+   "n": [
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.306,
+    1.572,
+    1.906
+   ],
+   "z_estrella": 4.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    0.11,
+    0.7,
+    0.84
+   ]
+  },
+  "full_media_inco": {
+   "c": [
+    2.0,
+    2.6,
+    4.0
+   ],
+   "potencia": [
+    0.25,
+    0.0833,
+    0.1667
+   ],
+   "n": [
+    12,
+    12,
+    12
+   ],
+   "c_realizado_medio": [
+    1.306,
+    1.572,
+    1.906
+   ],
+   "z_estrella": 3.0,
+   "banda_mm": [
+    2.4,
+    8.0
+   ],
+   "banda_completa": 1.0,
+   "alcance_mm": 8.02,
+   "z_estrella_valido_para_esta_banda": true,
+   "z_mos_medio": [
+    1.56,
+    0.07,
+    0.61
+   ]
+  },
+  "escriba10_media_vara": {
+   "c": [
+    2.6,
+    4.0
+   ],
+   "potencia": [
+    0.0,
+    0.0
+   ],
+   "n": [
+    8,
+    8
+   ],
+   "c_realizado_medio": [
+    2.577,
+    4.006
+   ],
+   "z_estrella": 4.0,
+   "banda_mm": [
+    2.4,
+    11.0
+   ],
+   "banda_completa": 0.0,
+   "alcance_mm": 8.57,
+   "z_estrella_valido_para_esta_banda": false,
+   "z_mos_medio": [
+    -0.03,
+    0.39
+   ]
+  },
+  "escriba10_media_inco": {
+   "c": [
+    2.6,
+    4.0
+   ],
+   "potencia": [
+    0.125,
+    0.0
+   ],
+   "n": [
+    8,
+    8
+   ],
+   "c_realizado_medio": [
+    2.577,
+    4.006
+   ],
+   "z_estrella": 3.0,
+   "banda_mm": [
+    2.4,
+    11.0
+   ],
+   "banda_completa": 0.0,
+   "alcance_mm": 10.09,
+   "z_estrella_valido_para_esta_banda": false,
+   "z_mos_medio": [
+    1.09,
+    0.73
+   ]
+  }
+ },
+ "X": {
+  "tex_media_vara": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "tex_media_inco": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "tex_sd_vara": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "tex_sd_inco": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "limpio_media_vara": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "limpio_media_inco": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "full_media_vara": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "full_media_inco": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "escriba10_media_vara": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  },
+  "escriba10_media_inco": {
+   "X50": null,
+   "X80": null,
+   "X50_realizado": null,
+   "X80_realizado": null
+  }
+ },
+ "GATE": {
+  "regla": "se juzga SOLO si X80(algun juez) <= c esperado del lector en 0009B; central 2.6 (gold113, n=2), optimista 2.96 (gold116-holdout, n=1)",
+  "completo": true,
+  "brazo_que_decide": "tex_media (textura de lector REAL sobre media_z)",
+  "X80_por_juez": {
+   "tex_media_vara": null,
+   "tex_media_inco": null
+  },
+  "X50_por_juez": {
+   "tex_media_vara": null,
+   "tex_media_inco": null
+  },
+  "c_lector": {
+   "central": 2.6,
+   "optimista": 2.96,
+   "medido_gold113_n2": 2.59,
+   "medido_gold116_holdout_n1": 2.96
+  },
+  "pasa_central": {
+   "tex_media_vara": false,
+   "tex_media_inco": false
+  },
+  "pasa_optimista": {
+   "tex_media_vara": false,
+   "tex_media_inco": false
+  },
+  "mejor_X80": null,
+  "mejor_juez": null,
+  "VEREDICTO": "NO-GO",
+  "consecuencia": "GATE FALLIDO: se declara el techo (juez, 31 mm @116 keV) y NO se corre el lector sobre 0009B"
+ },
+ "techo": {
+  "enunciado": "TECHO (juez de renglones, ventana cuadrada de 29.03 mm, 116 keV / 8.64 um, sustrato REAL de PHerc0009B, textura de lector REAL): ningun juez alcanza potencia 0.50 ni 0.80 en toda la rejilla de contraste hasta c = 4.0, muy por encima del c que el lector entrega (2.6-2.96). El limite NO es el lector: es la EXTENSION del material.",
+  "por_juez": {
+   "vara": {
+    "potencia_c2.6": 0.0833,
+    "ic95_c2.6": [
+     0.0,
+     0.194
+    ],
+    "potencia_c3.0": 0.0417,
+    "ic95_c3.0": [
+     0.0,
+     0.122
+    ],
+    "potencia_c4.0": 0.1667,
+    "ic95_c4.0": [
+     0.018,
+     0.316
+    ],
+    "potencia_max_en_rejilla": 0.1667,
+    "c_max_probado": 4.0
+   },
+   "inco": {
+    "potencia_c2.6": 0.0833,
+    "ic95_c2.6": [
+     0.0,
+     0.194
+    ],
+    "potencia_c3.0": 0.0833,
+    "ic95_c3.0": [
+     0.0,
+     0.194
+    ],
+    "potencia_c4.0": 0.375,
+    "ic95_c4.0": [
+     0.181,
+     0.569
+    ],
+    "potencia_max_en_rejilla": 0.375,
+    "c_max_probado": 4.0
+   }
+  },
+  "prueba_de_que_no_es_la_textura": "el brazo `limpio` (senal limpia, la cota optimista) tampoco llega: vara 0.333 e inco 0.25 de potencia a c=4.0",
+  "material_disponible": {
+   "ventanas_no_solapadas_29mm": 1,
+   "rect_efectivo_mm": [
+    44.41,
+    30.84
+   ],
+   "lado_menor_mm": 30.84
+  },
+  "precedente_r19": {
+   "fuente": "cache/r19/potencia1203.json",
+   "sustrato": "PHerc1203 @113 keV, misma ventana de 29 mm, texto humano LIMPIO (sin textura de lector)",
+   "X": "> 7.15 en las tres combinaciones; potencia estancada < 0.25",
+   "lectura": "el resultado de 0009B REPRODUCE el de 1203 en otro sustrato, otra energia y con textura de lector real"
+  }
+ },
+ "coordinacion_frente_G": {
+  "archivo": "<local>/juez_glifos.json",
+  "existe": true,
+  "veredicto": "MUERTO",
+  "kills_fallados": [
+   "KILL1_holdout116",
+   "KILL3_banco1203"
+  ],
+  "consecuencia": "el juez de glifos NO entra en este gate: el frente G lo declaro MUERTO (KILL1 holdout116 + KILL3 banco1203). El gate se decide con vara_v2 + inco_v2.",
+  "convergencia": "el frente G midio a escala de GLIFO lo mismo que este frente mide a escala de RENGLON: con forma limpia + ruido al c del lector el juez dispara (z=6.75, 93 %), con el mapa REAL del lector al mismo c no dispara (z=0.87, 0 %). Aqui el brazo `limpio` supera al brazo `tex` en el tope de la rejilla por el mismo motivo."
+ }
+}

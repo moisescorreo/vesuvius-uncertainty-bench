@@ -1,0 +1,840 @@
+{
+ "frente": "C1 — curacion de gold116 (PHerc0343P, 116keV/8.64um)",
+ "fuente": "<local>/label116",
+ "um_px": 8.64,
+ "factor_transferencia": 3.9007,
+ "holdout_sagrado": {
+  "seg": "20250511003658",
+  "regla": "JAMAS en train ni en seleccion de hiperparametros/checkpoint",
+  "tier": "texto_limpio"
+ },
+ "tiers": {
+  "texto_limpio": [
+   "20250511003658"
+  ],
+  "texto_parcial": [
+   "20250902170435",
+   "20250902170441",
+   "20250904233748"
+  ],
+  "moteado": [
+   "20250902170447",
+   "20250902171202",
+   "20250905172054"
+  ],
+  "vacio": [
+   "20250902171204"
+  ]
+ },
+ "resumen": {
+  "n_segmentos": 8,
+  "valid_mm2_total": 3202.6,
+  "valid_cm2_total": 32.03,
+  "tinta_mm2_thr128_total": 140.5,
+  "pos_mm2_receta_total": 80.6,
+  "entrenables_sin_holdout": [
+   "20250902170435",
+   "20250902170441",
+   "20250902170447",
+   "20250902171202",
+   "20250904233748",
+   "20250905172054"
+  ],
+  "cm2_entrenable_sin_holdout": 24.06
+ },
+ "receta_global_recomendada": {
+  "nota": "Umbrales sobre el uint8 del label transferido. La banda ignore no es opcional: el label vino de 2.215um y se subio x3.9007, asi que el borde del trazo tiene incertidumbre intrinseca de ~1px del resize MAS la del modelo generador.",
+  "thr_pos": 160,
+  "thr_neg": 96,
+  "dilat_borde_px": 3,
+  "halo_medido_p50_px_mediana": 5.0,
+  "ancho_trazo_p90_um_mediana": 324.3,
+  "ignore": [
+   "off_surface",
+   "margen al borde del dominio valido",
+   "96<=label<160",
+   "anillo dilatado alrededor de los positivos",
+   "huecos (label==0 dentro del dominio valido) dilatados 2px"
+  ],
+  "huecos_frac_del_valido_max": 0.0335,
+  "por_que_no_un_umbral_unico": "el barrido 64->192 mueve la fraccion de tinta por un factor >2 en todos los segmentos: el label NO es binario y forzarlo mete ruido de etiqueta directo al entrenamiento"
+ },
+ "por_segmento": [
+  {
+   "seg": "20250511003658",
+   "shape116": [
+    3440,
+    2060
+   ],
+   "mm": [
+    29.72,
+    17.8
+   ],
+   "bbox_mm2": 529.0,
+   "valid_frac": 0.7461,
+   "valid_mm2": 394.7,
+   "off_surface_frac": 0.2539,
+   "label_stats": {
+    "mean": 45.3,
+    "p50": 32,
+    "p90": 64,
+    "p95": 164,
+    "p99": 234,
+    "max": 242
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.10074,
+     "mm2": 39.8
+    },
+    "96": {
+     "frac": 0.07673,
+     "mm2": 30.3
+    },
+    "128": {
+     "frac": 0.06264,
+     "mm2": 24.7
+    },
+    "160": {
+     "frac": 0.05166,
+     "mm2": 20.4
+    },
+    "192": {
+     "frac": 0.04034,
+     "mm2": 15.9
+    }
+   },
+   "morfologia_128": {
+    "n": 69,
+    "n_grandes": 50,
+    "frac_moteado": 0.0135,
+    "area_med_mm2": 0.203,
+    "alto_med_mm": 0.549,
+    "ancho_med_mm": 0.562,
+    "elong_med": 1.28
+   },
+   "renglon_128": {
+    "periodo_mm": 6.32,
+    "ac_pico": 0.306,
+    "n_filas": 3328
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0235,
+    "halo_p50_px": 4.12,
+    "halo_p90_px": 10.63,
+    "halo_p95_px": 15.0,
+    "halo_p50_um": 35.6,
+    "semiancho_trazo_p90_px": 25.0,
+    "ancho_trazo_p90_um": 432.0,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.334,
+    "periodo_mm": 6.33,
+    "letras_plausibles": 12,
+    "alto_med_mm": 1.6,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "texto_limpio",
+   "tier_razon": "f128=0.0626 letras_r17=12 ac=0.306 periodo=6.32mm per_ok=True moteado=0.0135",
+   "receta_ignore": {
+    "thr_pos": 160,
+    "thr_neg": 96,
+    "dilat_borde_px": 3,
+    "usar_como": "HOLDOUT_SAGRADO",
+    "peso": 1.0,
+    "huecos_px": 177122,
+    "huecos_frac_del_valido": 0.0335,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.05166,
+    "px_neg_frac": 0.92326,
+    "px_ignore_frac": 0.02507,
+    "pos_mm2": 20.4
+   }
+  },
+  {
+   "seg": "20250902170435",
+   "shape116": [
+    3280,
+    2420
+   ],
+   "mm": [
+    28.34,
+    20.91
+   ],
+   "bbox_mm2": 592.5,
+   "valid_frac": 0.6582,
+   "valid_mm2": 390.0,
+   "off_surface_frac": 0.3418,
+   "label_stats": {
+    "mean": 47.38,
+    "p50": 34,
+    "p90": 74,
+    "p95": 145,
+    "p99": 229,
+    "max": 243
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.11512,
+     "mm2": 44.9
+    },
+    "96": {
+     "frac": 0.07853,
+     "mm2": 30.6
+    },
+    "128": {
+     "frac": 0.05845,
+     "mm2": 22.8
+    },
+    "160": {
+     "frac": 0.04347,
+     "mm2": 17.0
+    },
+    "192": {
+     "frac": 0.03007,
+     "mm2": 11.7
+    }
+   },
+   "morfologia_128": {
+    "n": 130,
+    "n_grandes": 83,
+    "frac_moteado": 0.0408,
+    "area_med_mm2": 0.148,
+    "alto_med_mm": 0.475,
+    "ancho_med_mm": 0.484,
+    "elong_med": 1.21
+   },
+   "renglon_128": {
+    "periodo_mm": 6.92,
+    "ac_pico": 0.167,
+    "n_filas": 3071
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0438,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 12.04,
+    "halo_p95_px": 16.49,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 23.09,
+    "ancho_trazo_p90_um": 399.0,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.053,
+    "periodo_mm": 8.67,
+    "letras_plausibles": 6,
+    "alto_med_mm": 1.43,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0585 letras_r17=6 ac=0.167 periodo=6.92mm per_ok=True moteado=0.0408",
+   "receta_ignore": {
+    "thr_pos": 176,
+    "thr_neg": 80,
+    "dilat_borde_px": 4,
+    "usar_como": "train",
+    "peso": 0.7,
+    "huecos_px": 33,
+    "huecos_frac_del_valido": 1e-05,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.03682,
+    "px_neg_frac": 0.90693,
+    "px_ignore_frac": 0.05625,
+    "pos_mm2": 14.4
+   }
+  },
+  {
+   "seg": "20250902170441",
+   "shape116": [
+    3300,
+    2520
+   ],
+   "mm": [
+    28.51,
+    21.77
+   ],
+   "bbox_mm2": 620.8,
+   "valid_frac": 0.6303,
+   "valid_mm2": 391.3,
+   "off_surface_frac": 0.3697,
+   "label_stats": {
+    "mean": 46.32,
+    "p50": 34,
+    "p90": 69,
+    "p95": 128,
+    "p99": 222,
+    "max": 239
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.10921,
+     "mm2": 42.7
+    },
+    "96": {
+     "frac": 0.07004,
+     "mm2": 27.4
+    },
+    "128": {
+     "frac": 0.05014,
+     "mm2": 19.6
+    },
+    "160": {
+     "frac": 0.03599,
+     "mm2": 14.1
+    },
+    "192": {
+     "frac": 0.02398,
+     "mm2": 9.4
+    }
+   },
+   "morfologia_128": {
+    "n": 117,
+    "n_grandes": 80,
+    "frac_moteado": 0.0382,
+    "area_med_mm2": 0.1518,
+    "alto_med_mm": 0.467,
+    "ancho_med_mm": 0.523,
+    "elong_med": 1.27
+   },
+   "renglon_128": {
+    "periodo_mm": 6.47,
+    "ac_pico": 0.181,
+    "n_filas": 3132
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0504,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 13.6,
+    "halo_p95_px": 20.88,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 19.1,
+    "ancho_trazo_p90_um": 330.0,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.26,
+    "periodo_mm": 6.49,
+    "letras_plausibles": 6,
+    "alto_med_mm": 1.41,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0501 letras_r17=6 ac=0.181 periodo=6.47mm per_ok=True moteado=0.0382",
+   "receta_ignore": {
+    "thr_pos": 176,
+    "thr_neg": 80,
+    "dilat_borde_px": 4,
+    "usar_como": "train",
+    "peso": 0.7,
+    "huecos_px": 0,
+    "huecos_frac_del_valido": 0.0,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.02991,
+    "px_neg_frac": 0.91462,
+    "px_ignore_frac": 0.05547,
+    "pos_mm2": 11.7
+   }
+  },
+  {
+   "seg": "20250902170447",
+   "shape116": [
+    3560,
+    2600
+   ],
+   "mm": [
+    30.76,
+    22.46
+   ],
+   "bbox_mm2": 691.0,
+   "valid_frac": 0.667,
+   "valid_mm2": 460.9,
+   "off_surface_frac": 0.333,
+   "label_stats": {
+    "mean": 39.48,
+    "p50": 33,
+    "p90": 48,
+    "p95": 68,
+    "p99": 180,
+    "max": 240
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.05644,
+     "mm2": 26.0
+    },
+    "96": {
+     "frac": 0.03045,
+     "mm2": 14.0
+    },
+    "128": {
+     "frac": 0.0199,
+     "mm2": 9.2
+    },
+    "160": {
+     "frac": 0.01322,
+     "mm2": 6.1
+    },
+    "192": {
+     "frac": 0.00824,
+     "mm2": 3.8
+    }
+   },
+   "morfologia_128": {
+    "n": 96,
+    "n_grandes": 44,
+    "frac_moteado": 0.0963,
+    "area_med_mm2": 0.1156,
+    "alto_med_mm": 0.419,
+    "ancho_med_mm": 0.432,
+    "elong_med": 1.28
+   },
+   "renglon_128": {
+    "periodo_mm": 10.99,
+    "ac_pico": 0.138,
+    "n_filas": 3331
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.1344,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 13.42,
+    "halo_p95_px": 20.1,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 18.03,
+    "ancho_trazo_p90_um": 311.6,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.213,
+    "periodo_mm": 6.48,
+    "letras_plausibles": 2,
+    "alto_med_mm": 1.5,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "moteado",
+   "tier_razon": "f128=0.0199 letras_r17=2 ac=0.138 periodo=10.99mm per_ok=False moteado=0.0963",
+   "receta_ignore": {
+    "thr_pos": 192,
+    "thr_neg": 64,
+    "dilat_borde_px": 5,
+    "usar_como": "train_solo_negativos",
+    "peso": 0.3,
+    "huecos_px": 20547,
+    "huecos_frac_del_valido": 0.00333,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.00824,
+    "px_neg_frac": 0.94356,
+    "px_ignore_frac": 0.0482,
+    "pos_mm2": 3.8
+   }
+  },
+  {
+   "seg": "20250902171202",
+   "shape116": [
+    3440,
+    2320
+   ],
+   "mm": [
+    29.72,
+    20.04
+   ],
+   "bbox_mm2": 595.8,
+   "valid_frac": 0.6768,
+   "valid_mm2": 403.2,
+   "off_surface_frac": 0.3232,
+   "label_stats": {
+    "mean": 45.52,
+    "p50": 34,
+    "p90": 66,
+    "p95": 126,
+    "p99": 220,
+    "max": 240
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.10474,
+     "mm2": 42.2
+    },
+    "96": {
+     "frac": 0.06839,
+     "mm2": 27.6
+    },
+    "128": {
+     "frac": 0.04935,
+     "mm2": 19.9
+    },
+    "160": {
+     "frac": 0.03539,
+     "mm2": 14.3
+    },
+    "192": {
+     "frac": 0.02262,
+     "mm2": 9.1
+    }
+   },
+   "morfologia_128": {
+    "n": 124,
+    "n_grandes": 69,
+    "frac_moteado": 0.0581,
+    "area_med_mm2": 0.1735,
+    "alto_med_mm": 0.51,
+    "ancho_med_mm": 0.518,
+    "elong_med": 1.21
+   },
+   "renglon_128": {
+    "periodo_mm": 9.23,
+    "ac_pico": 0.214,
+    "n_filas": 3267
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0571,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 12.0,
+    "halo_p95_px": 15.62,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 19.72,
+    "ancho_trazo_p90_um": 340.8,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.193,
+    "periodo_mm": 8.99,
+    "letras_plausibles": 2,
+    "alto_med_mm": 3.06,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "moteado",
+   "tier_razon": "f128=0.0493 letras_r17=2 ac=0.214 periodo=9.23mm per_ok=False moteado=0.0581",
+   "receta_ignore": {
+    "thr_pos": 192,
+    "thr_neg": 64,
+    "dilat_borde_px": 5,
+    "usar_como": "train_solo_negativos",
+    "peso": 0.3,
+    "huecos_px": 18529,
+    "huecos_frac_del_valido": 0.00343,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.02262,
+    "px_neg_frac": 0.89524,
+    "px_ignore_frac": 0.08214,
+    "pos_mm2": 9.1
+   }
+  },
+  {
+   "seg": "20250902171204",
+   "shape116": [
+    3340,
+    2340
+   ],
+   "mm": [
+    28.86,
+    20.22
+   ],
+   "bbox_mm2": 583.4,
+   "valid_frac": 0.6883,
+   "valid_mm2": 401.6,
+   "off_surface_frac": 0.3117,
+   "label_stats": {
+    "mean": 36.14,
+    "p50": 32,
+    "p90": 40,
+    "p95": 49,
+    "p99": 126,
+    "max": 238
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.02856,
+     "mm2": 11.5
+    },
+    "96": {
+     "frac": 0.01532,
+     "mm2": 6.2
+    },
+    "128": {
+     "frac": 0.00978,
+     "mm2": 3.9
+    },
+    "160": {
+     "frac": 0.00645,
+     "mm2": 2.6
+    },
+    "192": {
+     "frac": 0.00383,
+     "mm2": 1.5
+    }
+   },
+   "morfologia_128": {
+    "n": 48,
+    "n_grandes": 21,
+    "frac_moteado": 0.1357,
+    "area_med_mm2": 0.1281,
+    "alto_med_mm": 0.449,
+    "ancho_med_mm": 0.467,
+    "elong_med": 1.32
+   },
+   "renglon_128": {
+    "periodo_mm": 7.63,
+    "ac_pico": 0.104,
+    "n_filas": 3131
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.1159,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 11.7,
+    "halo_p95_px": 15.03,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 15.23,
+    "ancho_trazo_p90_um": 263.2,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.154,
+    "periodo_mm": 7.71,
+    "letras_plausibles": 0,
+    "alto_med_mm": null,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "vacio",
+   "tier_razon": "f128=0.0098 letras_r17=0 ac=0.104 periodo=7.63mm per_ok=False moteado=0.1357",
+   "receta_ignore": {
+    "thr_pos": null,
+    "thr_neg": 64,
+    "dilat_borde_px": 5,
+    "usar_como": "solo_negativos",
+    "peso": 0.2,
+    "huecos_px": 4,
+    "huecos_frac_del_valido": 0.0,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.0,
+    "px_neg_frac": 0.97144,
+    "px_ignore_frac": 0.02856,
+    "pos_mm2": 0.0
+   }
+  },
+  {
+   "seg": "20250904233748",
+   "shape116": [
+    3620,
+    2500
+   ],
+   "mm": [
+    31.28,
+    21.6
+   ],
+   "bbox_mm2": 675.6,
+   "valid_frac": 0.6435,
+   "valid_mm2": 434.7,
+   "off_surface_frac": 0.3565,
+   "label_stats": {
+    "mean": 48.41,
+    "p50": 34,
+    "p90": 81,
+    "p95": 147,
+    "p99": 223,
+    "max": 242
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.1296,
+     "mm2": 56.3
+    },
+    "96": {
+     "frac": 0.0845,
+     "mm2": 36.7
+    },
+    "128": {
+     "frac": 0.06087,
+     "mm2": 26.5
+    },
+    "160": {
+     "frac": 0.04384,
+     "mm2": 19.1
+    },
+    "192": {
+     "frac": 0.02852,
+     "mm2": 12.4
+    }
+   },
+   "morfologia_128": {
+    "n": 170,
+    "n_grandes": 103,
+    "frac_moteado": 0.0405,
+    "area_med_mm2": 0.1611,
+    "alto_med_mm": 0.492,
+    "ancho_med_mm": 0.484,
+    "elong_med": 1.24
+   },
+   "renglon_128": {
+    "periodo_mm": 9.56,
+    "ac_pico": 0.173,
+    "n_filas": 3113
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0549,
+    "halo_p50_px": 5.0,
+    "halo_p90_px": 11.66,
+    "halo_p95_px": 15.26,
+    "halo_p50_um": 43.2,
+    "semiancho_trazo_p90_px": 18.44,
+    "ancho_trazo_p90_um": 318.6,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.174,
+    "periodo_mm": 8.99,
+    "letras_plausibles": 9,
+    "alto_med_mm": 1.58,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "texto_parcial",
+   "tier_razon": "f128=0.0609 letras_r17=9 ac=0.173 periodo=9.56mm per_ok=False moteado=0.0405",
+   "receta_ignore": {
+    "thr_pos": 176,
+    "thr_neg": 80,
+    "dilat_borde_px": 4,
+    "usar_como": "train",
+    "peso": 0.7,
+    "huecos_px": 0,
+    "huecos_frac_del_valido": 0.0,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.03614,
+    "px_neg_frac": 0.89816,
+    "px_ignore_frac": 0.06569,
+    "pos_mm2": 15.7
+   }
+  },
+  {
+   "seg": "20250905172054",
+   "shape116": [
+    3020,
+    2280
+   ],
+   "mm": [
+    26.09,
+    19.7
+   ],
+   "bbox_mm2": 514.0,
+   "valid_frac": 0.6346,
+   "valid_mm2": 326.2,
+   "off_surface_frac": 0.3654,
+   "label_stats": {
+    "mean": 44.42,
+    "p50": 33,
+    "p90": 64,
+    "p95": 114,
+    "p99": 211,
+    "max": 240
+   },
+   "tinta_por_umbral": {
+    "64": {
+     "frac": 0.10031,
+     "mm2": 32.7
+    },
+    "96": {
+     "frac": 0.06268,
+     "mm2": 20.4
+    },
+    "128": {
+     "frac": 0.04263,
+     "mm2": 13.9
+    },
+    "160": {
+     "frac": 0.02806,
+     "mm2": 9.2
+    },
+    "192": {
+     "frac": 0.01687,
+     "mm2": 5.5
+    }
+   },
+   "morfologia_128": {
+    "n": 117,
+    "n_grandes": 70,
+    "frac_moteado": 0.0588,
+    "area_med_mm2": 0.1306,
+    "alto_med_mm": 0.48,
+    "ancho_med_mm": 0.467,
+    "elong_med": 1.41
+   },
+   "renglon_128": {
+    "periodo_mm": 4.5,
+    "ac_pico": 0.147,
+    "n_filas": 2653
+   },
+   "banda_incertidumbre": {
+    "frac_lo96_sin_nucleo160": 0.0664,
+    "halo_p50_px": 5.39,
+    "halo_p90_px": 13.93,
+    "halo_p95_px": 19.65,
+    "halo_p50_um": 46.6,
+    "semiancho_trazo_p90_px": 17.26,
+    "ancho_trazo_p90_um": 298.3,
+    "nota": "halo = rampa blanda 96<=label<160 pegada a un nucleo >=160. La banda de UMBRAL ya la excluye; el anillo geometrico extra solo cubre el residual de resize x3.9007 (~1px) mas la holgura de colocacion de la superficie."
+   },
+   "r17_ref": {
+    "ac_pico": 0.079,
+    "periodo_mm": 8.69,
+    "letras_plausibles": 2,
+    "alto_med_mm": 1.62,
+    "nota": "cache/r17/legibilidad.json (estimador r17, sin mascara de validez)"
+   },
+   "tier": "moteado",
+   "tier_razon": "f128=0.0426 letras_r17=2 ac=0.147 periodo=4.5mm per_ok=False moteado=0.0588",
+   "receta_ignore": {
+    "thr_pos": 192,
+    "thr_neg": 64,
+    "dilat_borde_px": 5,
+    "usar_como": "train_solo_negativos",
+    "peso": 0.3,
+    "huecos_px": 0,
+    "huecos_frac_del_valido": 0.0,
+    "ignore_extra": [
+     "off_surface (valid_mask=False)",
+     "margen 5px al borde del dominio valido",
+     "banda thr_neg<=label<thr_pos",
+     "HUECOS: (label==0 & dominio_valido) dilatado 2px — es ausencia de dato (hueco de malla o tile caido de la inferencia), NO papiro limpio; si se entrena como negativo es una mentira dura"
+    ],
+    "px_pos_frac": 0.01687,
+    "px_neg_frac": 0.89967,
+    "px_ignore_frac": 0.08346,
+    "pos_mm2": 5.5
+   }
+  }
+ ]
+}
