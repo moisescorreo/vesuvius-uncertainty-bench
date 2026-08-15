@@ -159,9 +159,12 @@ useful experiment we can identify. We have not run it.
 python scripts/audit_provenance.py --fetch --out audit/data/provenance_live.json
 ```
 
-C-A1/C-A2/C-A3 print PASS or FAIL against the live catalogue. **A FAIL on C-A1
-is expected over time and is informative**: it means another generator has
-appeared, and the printed table says exactly where.
+C-A1/C-A2/C-A3 print PASS or FAIL against the live catalogue. C-A1 is scoped to
+the **116 keV corpus** (`PHerc0343P`), which is where "no second opinion exists"
+actually bites; generators appearing elsewhere are printed as a `[note]`, not a
+failure, together with the samples where two-generator agreement has become
+measurable. **A FAIL on C-A1 would be excellent news** — it would mean a second
+opinion now exists at 116 keV, and the printed table would say whose.
 
 Gotcha handled in `audit/provenance.py`: `metadata.json` is gzip-compressed but
 served without a `Content-Encoding` header, so `requests.get(...).json()`
