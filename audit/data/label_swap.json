@@ -1,0 +1,225 @@
+{
+ "__constancia__": "Mismo lector, mismo mapa, mismo volumen, mismas mascaras y misma metrica de celda; lo UNICO que cambia es de que generador salio la etiqueta. Mide directamente cuanto de un AUC reportado es propiedad del lector y cuanto de la eleccion de etiquetador.",
+ "segmento": "20250628074500 (PHerc0500P2, 113 keV) — uno de los dos segmentos del catalogo con los DOS generadores",
+ "nota_r21": "el 0.7295 publicado como 'texto limpio' se midio contra la etiqueta del gen2 (ver procedencia_gold113 en acuerdo_generadores.json)",
+ "resumen": {
+  "n": 10,
+  "media_delta": -0.032,
+  "sd": 0.0198,
+  "min": -0.0447,
+  "max": 0.0199,
+  "abs_media": 0.036
+ },
+ "por_lector": [
+  {
+   "seg": "20250628074500",
+   "lector": "s43_040k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6953,
+    "c": 2.251,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.7295,
+    "c": 2.8363,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0342,
+   "delta_c_g1_menos_g2": -0.5853
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "s42_060k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6705,
+    "c": 1.5203,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.7152,
+    "c": 2.0714,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0447,
+   "delta_c_g1_menos_g2": -0.5511
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "s42_040k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6542,
+    "c": 1.5545,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.6964,
+    "c": 2.0138,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0422,
+   "delta_c_g1_menos_g2": -0.4593
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "s43_060k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.671,
+    "c": 1.4593,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.7044,
+    "c": 1.8425,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0334,
+   "delta_c_g1_menos_g2": -0.3832
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "s43_075k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6722,
+    "c": 1.9282,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.7103,
+    "c": 2.5282,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0381,
+   "delta_c_g1_menos_g2": -0.6
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "s42_075k",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6329,
+    "c": 1.418,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.6768,
+    "c": 1.9316,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0439,
+   "delta_c_g1_menos_g2": -0.5136
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "ens6",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.6976,
+    "c": 1.4325,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.74,
+    "c": 1.8818,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0424,
+   "delta_c_g1_menos_g2": -0.4493
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "ens2_mix",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.7033,
+    "c": 1.5635,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.7455,
+    "c": 2.0494,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0422,
+   "delta_c_g1_menos_g2": -0.4859
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "media_z",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.5472,
+    "c": 0.181,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.5273,
+    "c": 0.0904,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": 0.0199,
+   "delta_c_g1_menos_g2": 0.0906
+  },
+  {
+   "seg": "20250628074500",
+   "lector": "sd_z",
+   "ctx_g2_igual_al_de_r21": true,
+   "n_letras_g1": 39,
+   "n_letras_g2": 30,
+   "g1": {
+    "auc": 0.5774,
+    "c": 0.4447,
+    "n_cel": 47862,
+    "frac_pos": 0.0651
+   },
+   "g2": {
+    "auc": 0.5961,
+    "c": 0.5025,
+    "n_cel": 47707,
+    "frac_pos": 0.0621
+   },
+   "delta_auc_g1_menos_g2": -0.0187,
+   "delta_c_g1_menos_g2": -0.0578
+  }
+ ]
+}
