@@ -31,6 +31,15 @@ The Challenge publishes ink predictions computed on the **fine** scan
 (2.215 µm/111 keV). We need them on the **coarse** grid (116/113 keV), which is
 where the prize scrolls live.
 
+> **Which generator wrote them.** `gold116` is homogeneous: all 8 labels come
+> from `20260417190342`. **`gold113` is a mixture — 36 from `20260417190342`
+> and 2 from `20260709123958`** (`20250628074500`, `20250919184428`, the two
+> segments the catalogue covers with both). An earlier version of this
+> repository declared a single generator for all 38; that was wrong and is
+> corrected here, in `labels/README.md` and in the shipped transfer record.
+> The two generators agree at AUC 0.860 ± 0.047, but the choice moves a
+> reader's AUC by 0.036 and `c` by 0.40 — see [`../RESULTS.md` §R11](../RESULTS.md).
+
 The registration problem does not exist, because the Challenge already solved
 it upstream: the segment is traced once, and the *same mesh* is published
 transformed onto both volumes (`…-on-<volume>-2.215um.tifxyz` and
@@ -147,6 +156,11 @@ Run `python scripts/ceiling_table.py` for the live table. The summary:
 1. The labels are **model output**, not human ground truth. See
    [`../audit/README.md`](../audit/README.md).
 2. Both source samples are in the generator's `compatible_samples`.
+2b. **Every AUC on this page carries a ±0.036 label-choice term** (and ±0.40 in
+   `c`), measured in R11 by swapping generators with the reader and metric held
+   fixed. That exceeds the +0.006 margin separating the top checkpoints, so the
+   *ranking* above should not be read as resolved. The ceiling itself stands:
+   the two generators agree with each other (0.860) well above it.
 3. **n = 1** clean-text segment at 116 keV, **n = 2** at 113 keV. The reader and
    the z-window were selected on those same segments, so the reported contrast
    is slightly optimistic.

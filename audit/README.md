@@ -143,13 +143,39 @@ Stated in advance, so it can be checked rather than argued:
    an IR-imaged fragment, or a model from a genuinely different family.
 2. **A published ink detection for PHerc0009B**, which is not in
    `compatible_samples` and already has both scans and 18 meshes.
-3. **Two-generator agreement measured per segment** where both now exist:
-   2 segments of PHerc0500P2 and 37 of PHerc0139. If the two agree strongly,
-   the circularity concern weakens; if they disagree, the size of that
-   disagreement is the honest error bar on every 116 keV AUC ever reported.
+3. ~~**Two-generator agreement measured per segment**~~ — **DONE. See
+   [`../RESULTS.md` §R11](../RESULTS.md).**
 
-Item 3 costs nothing but compute, needs no new data, and is the single cheapest
-useful experiment we can identify. We have not run it.
+### Result of item 3
+
+The dual corpus is larger than the check above reports: **114 segments**, not
+39 (PHercParis4 37, PHerc0139 37, PHerc1667 19, PHerc0814 19, PHerc0500P2 2).
+gen2 never runs alone.
+
+The two generators **agree at AUC 0.860 ± 0.047** (Dice 0.547 ± 0.093), and the
+agreement is stroke-level: high-pass filtering costs only 0.036 of correlation,
+while displacing one map against the other collapses AUC from 0.878 to 0.585.
+
+That answer runs **against** the hypothesis this item was posed to test. We
+expected agreement around a good reader's level (~0.7–0.8), which would have
+placed every reported AUC inside generator noise. At 0.860 the generators agree
+*better than any reader agrees with either of them*, so **generator
+disagreement does not explain the ceiling away** — the shortfalls in the
+benchmark are real.
+
+What it does establish is **precision**. Swapping which generator supplies the
+label, with the reader and metric held fixed, moves AUC by **0.036** and
+contrast `c` by **0.40** — roughly six times the +0.0061 margin that separates
+the top public checkpoints. Every single-generator evaluation, including ours,
+carries that term.
+
+It also surfaced an error in our own shipping: `gold113` is a **mixture** —
+36 labels from gen1, 2 from gen2 — corrected in
+[`../labels/README.md`](../labels/README.md) and in the shipped transfer record.
+
+And a lead: gen2's labels are substantially more letter-shaped than gen1's
+(median z per letter 3.16 vs 0.76, winning 12 of 12 paired segments), which
+reopens distillation against gen2 as a training target. Not run.
 
 ---
 

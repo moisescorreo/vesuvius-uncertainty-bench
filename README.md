@@ -119,6 +119,12 @@ baselines** give, outside the one clean-text segment:
 
 *(full 11-reader table: `python scripts/ceiling_table.py`)*
 
+**Read the ranking with its error bar.** Where a second generator's label
+exists, swapping which one supplies it moves AUC by **0.036** and `c` by
+**0.40** with the reader and metric fixed — six times the +0.006 margin between
+the top rows. The ceiling survives (the two generators agree at 0.860, above
+it); its precision does not. → [`RESULTS.md` §R11](RESULTS.md)
+
 **The ceiling of public checkpoints at 116 keV against an independent label is
 AUC 0.57 ± 0.04, and no checkpoint separates from the trivial `media_z`
 substrate baseline.** On the single segment with clean text it rises to 0.73

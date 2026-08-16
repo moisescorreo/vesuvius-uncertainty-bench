@@ -66,6 +66,22 @@ a mosaic null holds, and caught a real false positive.
   is the case for building an independent benchmark rather than training harder
   against the existing corpus.
 
+- **The inter-generator agreement band, and the error bar every single-label
+  evaluation inherits.** Two ink generators now coexist in the public catalogue
+  over **114 dual segments**. Measured on the same segments and the same grid,
+  they agree at **AUC 0.860 ± 0.047** (Dice 0.547 ± 0.093), and the agreement is
+  stroke-level rather than envelope-level — high-pass filtering costs 0.036 of
+  correlation while a 12-cell displacement collapses AUC from 0.878 to 0.585.
+  This *refutes* the convenient hypothesis: the generators agree better than any
+  reader agrees with either, so generator noise does **not** explain the ceiling
+  away. What it does establish is precision — **swapping which generator supplies
+  the label moves a published AUC by 0.036 and reader contrast `c` by 0.40**, with
+  the reader, map, masks and metric held fixed. That is ~6× the +0.0061 margin
+  separating the top public checkpoints. The audit also caught an error in our
+  own shipping (`gold113` is 36 labels from one generator and 2 from the other,
+  settled bit-exactly by re-derivation) and is corrected in place rather than
+  quietly.
+
 - **Surface renderer with an offline chunk planner.** Enumerates the exact set
   of zarr chunks a surface render can touch — `floor(p)` and `floor(p)+1` per
   axis per layer — before opening a connection, then fetches only those.
@@ -160,12 +176,19 @@ validation methodology as the findings it enables.
 - No scroll data is redistributed. The 42 MB of shipped labels are derived
   arrays under CC BY-NC 4.0 with the EduceLab-Scrolls citation
   (arXiv:2304.02084) and the Challenge data terms attached.
-- `RESULTS.md` R9 and R10 are **CLOSED**. R9 is the controlled label experiment
-  (the package's differentiator); R10 is closed by its own pre-registered gate
-  (the trained reader's contrast fell, so the power grid was not re-run — stated
-  rather than quietly skipped). **R11 remains open** and is explicitly marked
-  "not run": per-segment agreement between the two ink generators that now
-  coexist at 113 keV.
+- `RESULTS.md` R9, R10 and R11 are all **CLOSED**; there are no open sections.
+  R9 is the controlled label experiment (the package's differentiator); R10 is
+  closed by its own pre-registered gate (the trained reader's contrast fell, so
+  the power grid was not re-run — stated rather than quietly skipped); R11 is
+  the inter-generator agreement band, which came back *against* the hypothesis
+  it was posed to test and is reported that way.
+- **R11 forced a correction to shipped data** (`gold113` is a two-generator
+  mixture). It is corrected in `labels/README.md`, `benchmark/README.md` and the
+  shipped `transfer_gold113.json`, with the superseded declaration retained in
+  the record. Reviewers may reasonably see the self-correction as a feature; do
+  not remove it.
+- Follow-ups the package names and does **not** claim: distilling against the
+  second generator, and full-resolution agreement on PHerc1667/PHerc0814.
 - If a demo is wanted, `python scripts/null_comparison.py --windows 8` runs on
   bundled data in a few minutes and reproduces the headline finding on a
   laptop with no downloads.

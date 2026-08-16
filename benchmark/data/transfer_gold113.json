@@ -10,10 +10,44 @@
   "nota_ratio": "los ratios medidos caen en 4.19-4.22 (no 4.2266 exacto) porque cada rejilla se redondea a multiplo de chunk; el resize se hace al SHAPE EXACTO del zarr 113, no por factor"
  },
  "generador_etiqueta": {
-  "model_id": "20260417190342",
-  "nombre": "new_canon_autoresearch_recipe",
-  "corrio_sobre": "2.215um/0.4m/111keV",
-  "caveat": "salida de MODELO, no GT humana; PHerc0500P2 esta en compatible_samples"
+  "__CORRECTION__": "This record originally declared a single generator for all 38 labels. That was WRONG. gold113 is a MIXTURE: 36 labels come from 20260417190342 and 2 from 20260709123958 (the two segments the catalogue covers with BOTH generators). The survey that produced the download paths took the FIRST ink-detection entry per segment, which on a dual segment is 20260709123958. Attribution settled by re-derivation: rebuilding from the source TIFs reproduces the stored arrays BIT FOR BIT for gen2 (max |delta| = 0 on both) and not for gen1 (MAD 9.5 and 20.1). See RESULTS.md section R11 and labels/README.md. gold116 is unaffected: PHerc0343P has exactly one generator.",
+  "n_labels": 38,
+  "by_model": {
+   "20260417190342": {
+    "n": 36,
+    "identifier": "new_canon_autoresearch_recipe",
+    "architecture": "resnet3d-152-3d-decoder",
+    "target_resolution_um": [
+     2.0,
+     3.0
+    ]
+   },
+   "20260709123958": {
+    "n": 2,
+    "identifier": "mrg20736_1um_s1z2",
+    "architecture": "resnet3d-152",
+    "target_resolution_um": [
+     1.0,
+     1.5
+    ],
+    "segments": [
+     "20250628074500",
+     "20250919184428"
+    ],
+    "note": "20250628074500 supplies half of the pooled 113 keV reader contrast quoted in RESULTS.md section R7: 2.5902 as published (gen2 label), 2.2976 with gen1's label instead."
+   }
+  },
+  "inter_generator_agreement": {
+   "auc_pooled": 0.86,
+   "auc_sd": 0.047,
+   "dice_128": 0.547,
+   "label_swap_delta_auc_abs": 0.036,
+   "label_swap_delta_c": -0.4,
+   "see": "audit/data/generator_agreement.json"
+  },
+  "original_declaration_superseded": {
+   "model_id": "20260417190342"
+  }
  },
  "piloto": {
   "n": 10,

@@ -5,10 +5,12 @@ is either shipped (`labels/`, `validation/data/substrate/`) or fetched from the
 public bucket. The claim → script → artifact map is
 [`docs/CLAIMS.md`](docs/CLAIMS.md).
 
-Sections marked **[open]** are results in flight; they are placeholders, not
-findings, and they say so. **R9 is the controlled experiment** that explains
-the rest: with everything but the label held fixed, letter form is learnable
-from human labels and not from model-generated ones.
+All sections are closed; follow-ups the results name but do not claim are marked
+**not run**. **R9 is the controlled experiment** that explains the rest — with
+everything but the label held fixed, letter form is learnable from human labels
+and not from model-generated ones — and **R11 is the error bar** that every
+number measured against a single generator's label, including R4's and R7's,
+turns out to carry.
 
 ---
 
@@ -77,6 +79,16 @@ Largest margin of any checkpoint over the substrate floor: **+0.0061**, against
 a between-segment sd of **0.0607**. Ceiling off-holdout: **AUC 0.57 ± 0.04**.
 On the single clean-text segment: **0.7288**.
 
+> **Precision caveat (from R11).** These AUCs are measured against one
+> generator's label. Where a second generator exists, swapping which one
+> supplies the label moves AUC by **0.036** and `c` by **0.40** with the reader
+> and metric held fixed — **about six times** the +0.0061 margin that separates
+> the top checkpoints here, and more than half the between-segment sd. **The
+> ranking in this table is not robust to a label choice that was never
+> presented as a choice.** The ceiling itself survives (the two generators agree
+> at 0.860, above this ceiling, so the shortfall is real); its *precision* does
+> not. See R11.
+
 ## R5 — The permutation null is not safe (reproduced live)
 
 `python scripts/null_comparison.py --windows 8 --n-perm 99 --n-mos 99`
@@ -118,6 +130,15 @@ five seeds `z_perm` persists at 5.22–6.70.
 
 Clean-signal arm (optimistic bound) also fails: 0.333 / 0.25 at c = 4.0.
 Realised contrast tracks nominal: 1.52 / 2.00 / 2.61 / 3.03 / 3.97.
+
+> **Sensitivity of the 113 keV input (from R11).** The reader contrast that
+> parameterises this wall is pooled over two segments, and one of them
+> (`20250628074500`) turns out to carry a label from the *second* generator.
+> Published pooled `c` = **2.5902** (gen2 label on that segment); recomputed
+> with gen1's label it is **2.2976**, a shift of **−0.29**. This feeds X₈₀
+> directly. The verdict does not change sign — the lower value moves *further*
+> from the threshold, making the wall harder, not easier — but the input was
+> never a single well-defined number, and both figures are stated here.
 
 ## R8 — Threshold calibration and FPR bounds
 
@@ -256,6 +277,13 @@ the identical recipe on human labels can.
 - z = 1.664 at 54 keV is a large, controlled *improvement* but still below the
   pre-registered z ≥ 3. We call the 54 keV arm a positive **control**, not a
   solved reading problem.
+- **The negative arm used the less letter-shaped of the two available model
+  labels (from R11).** The second generator's blobs score median z 3.16 per
+  letter against gen1's 0.76, winning on 12 of 12 paired segments. R9's
+  conclusion — human versus model supervision — is unaffected, because gen2 is
+  still a model. But a distillation target with substantially more letter form
+  now demonstrably exists, and **re-running this training arm against gen2 is
+  the obvious follow-up. It is not run here.**
 
 <!-- R21 --> <!-- CLOSED -->
 ## R10 — Power curves for the trained reader: gate not met, not run
@@ -284,17 +312,230 @@ untouched.
 
 ---
 
+<!-- R22 --> <!-- CLOSED -->
+## R11 — Two-generator agreement: an error bar for every single-label AUC
+
+**Closed.** The audit (C-A1) found a second ink generator. It is now measured.
+Two models from the public catalogue, run on the *same* segment, agree with each
+other at **AUC 0.860 ± 0.047** and **Dice 0.547 ± 0.093**. Swapping which of the
+two supplies the label moves a published AUC by **0.036** and the reader
+contrast `c` by **0.40** — with the reader, the map, the masks and the metric
+held fixed. That is the error bar every 113/116 keV number in this repository,
+including R4's and R7's, has been carrying without stating it. And two of the 38
+`gold113` labels shipped here turn out to come from the second generator, not
+the first as the transfer record declared — corrected below and in
+`labels/README.md`.
+
+Shipped evidence: `audit/data/generator_agreement.json`,
+`generator_agreement_per_segment.json`, `label_swap.json`.
+
+### Scope: the second generator is larger than the audit reported
+
+| | `20260417190342` (gen1) | `20260709123958` (gen2) |
+|---|---|---|
+| identifier | `new_canon_autoresearch_recipe` | `mrg20736_1um_s1z2` |
+| architecture | resnet3d-152-3d-decoder | resnet3d-152 |
+| target resolution | 2.0–3.0 µm | 1.0–1.5 µm, render level 1 |
+| segments in catalogue | 202 | **114** |
+
+Segments carrying **both**: **114**, not 39 — PHercParis4 37, PHerc0139 37,
+PHerc1667 19, PHerc0814 19, PHerc0500P2 2. gen2 never appears alone: every
+segment it covers is also covered by gen1, so the dual corpus is its whole
+extent.
+
+### Method
+
+Both maps are renders of the same mesh into different volumes, so they share the
+(u, v) parametrisation and differ only in pixel scale. They are brought to one
+grid by a single INTER_AREA resize onto the **exact** target shape — never by a
+factor — the same procedure used to build `gold113`. On PHerc0500P2 both
+generators ran on the *same* volume (2.215 µm), so that pair needs **no resize at
+all** and is compared pixel for pixel.
+
+| check | result |
+|---|---|
+| V1 shape ratio vs resolution ratio | max deviation **0.13 %** (14/14) |
+| V2 each TIF lands on its surface-volume grid | **28/28 exact**, Δ = 0 px |
+| V4 common grid identical for both | 14/14 |
+| best global shift, ±12 cells, high-pass corr | **(0, 0) in 13/13** |
+
+The shift control replaces a frame check and is stronger: if the two maps did not
+share a frame, correlation would not peak at zero offset.
+
+### Agreement, 14 segments (2 PHerc0500P2 + 12 PHerc0139)
+
+The 12 PHerc0139 segments were drawn by area into 6 strata, 2 at random per
+stratum (seed 22). Area is independent of agreement, so the mean is not selected
+on the outcome.
+
+| statistic | mean ± sd | range |
+|---|---|---|
+| AUC — gen1 as score, gen2 as label @128 | **0.866 ± 0.047** | 0.783 – 0.950 |
+| AUC — gen2 as score, gen1 as label @128 | **0.853 ± 0.047** | 0.770 – 0.921 |
+| AUC, both directions pooled (n = 28) | **0.860 ± 0.047** | 0.770 – 0.950 |
+| Dice @128 | **0.547 ± 0.093** | 0.347 – 0.662 |
+| IoU @128 | 0.381 ± 0.085 | 0.210 – 0.495 |
+| Pearson r, pixel | 0.592 ± 0.093 | 0.430 – 0.749 |
+| Pearson r, 0.1498 mm cell | 0.614 ± 0.097 | 0.452 – 0.772 |
+| Pearson r, cell, **high-pass** σ = 1.2 mm | **0.578 ± 0.099** | 0.415 – 0.723 |
+| localised excess AUC(0) − mean AUC(8, 12 cells) | 0.277 ± 0.036 | 0.218 – 0.335 |
+
+Dice is flat in the threshold (0.557 at 96, 0.533 at 160), so the disagreement is
+not a calibration offset.
+
+**The agreement is stroke-level, not envelope-level.** Removing everything
+coarser than 1.2 mm costs only 0.036 of correlation (0.614 → 0.578); and
+displacing one map against the other collapses it:
+
+| offset (cells of 0.1498 mm) | 0 | 2 | 4 | 8 | 12 |
+|---|---|---|---|---|---|
+| AUC | **0.878** | 0.813 | 0.701 | 0.618 | 0.585 |
+
+The two models are agreeing about *where* the ink is, not about a shared
+low-frequency picture of damage and fibre.
+
+### They do not label the same surface
+
+| | gen1 | gen2 |
+|---|---|---|
+| footprint, fraction of canvas | 0.816 ± 0.116 | **0.374 ± 0.094** |
+| ink fraction @128 (on the overlap) | 0.166 ± 0.146 | 0.122 ± 0.088 |
+
+Footprint IoU is **0.484 ± 0.223** — and exactly **1.000** on the two PHerc0500P2
+segments, where both ran on the same volume. On PHerc0139 the 1.129 µm volume
+simply sees less of the segment, so gen2 covers roughly half of what gen1 covers.
+All agreement above is measured on the intersection (14.6 ± 5.2 cm² per segment,
+≈ 205 cm² in total). gen2 is therefore not a drop-in replacement label: it is a
+different, smaller field of view.
+
+### Corpus-wide context (downsampled previews, all 114)
+
+Orientative only — ds8 previews are JPEG and 8× coarser — but they show the fine
+sample is not a lucky draw, and that agreement is strongly sample-dependent:
+
+| sample | n | Dice @128 | AUC (gen1 → gen2) |
+|---|---|---|---|
+| PHerc0500P2 | 1 | 0.580 | 0.897 |
+| PHercParis4 | 37 | 0.522 ± 0.237 | 0.878 ± 0.063 |
+| PHerc0139 | 37 | 0.516 ± 0.114 | 0.869 ± 0.047 |
+| PHerc0814 | 18 | 0.348 ± 0.216 | 0.695 ± 0.101 |
+| PHerc1667 | 19 | 0.302 ± 0.097 | 0.731 ± 0.061 |
+
+### What it costs a published number
+
+PHerc0500P2 `20250628074500` is one of the two segments with both generators, so
+the evaluation can be repeated changing **only** the label. Reader map, volume,
+coverage masks, cell grid and metric are byte-identical to R9's; the gen2 context
+reproduces R9's cell count (47 707) exactly.
+
+| reader | AUC vs gen2 | AUC vs gen1 | Δ | `c` vs gen2 | `c` vs gen1 |
+|---|---|---|---|---|---|
+| `s43_040k` (frozen) | **0.7295** | 0.6953 | −0.0342 | 2.836 | 2.251 |
+| `ens2_mix` | 0.7455 | 0.7033 | −0.0422 | 2.049 | 1.564 |
+| `ens6` | 0.7400 | 0.6976 | −0.0424 | 1.882 | 1.433 |
+| `s42_060k` | 0.7152 | 0.6705 | −0.0447 | 2.071 | 1.520 |
+| `mean_z` (substrate) | 0.5273 | 0.5472 | +0.0199 | 0.090 | 0.181 |
+
+Across 10 readers: **Δ AUC = −0.032 ± 0.020**, mean |Δ| = **0.036**; **Δ c =
+−0.40 ± 0.23**. The sign is not uniform — the substrate baseline moves the other
+way — so this is a re-ranking effect, not a constant offset.
+
+Put against R4: the largest margin any public checkpoint holds over the substrate
+floor is **+0.0061**. Changing which generator wrote the label moves the same
+kind of number by **0.036 — about six times that margin**, and by more than half
+the between-segment sd of 0.0607. The R4 ordering is not robust to a choice that
+was never presented as a choice.
+
+**What this does and does not license.** The result is not the one the slot was
+reserved to find. We expected the two generators to agree at roughly the level of
+a good reader (~0.7–0.8), which would have placed every reported AUC inside
+generator noise. They agree at **0.860** — better than any reader agrees with
+either of them. So generator disagreement does **not** explain the ceiling away:
+R4's 0.57 off-holdout and 0.73 on clean text remain genuine shortfalls. What it
+does establish is the *precision* of those shortfalls. A single-generator AUC is
+a measurement with a ±0.036 label-choice term and a ±0.40 term in `c`, neither of
+which was previously stated, and both of which exceed the differences the
+comparison tables are being asked to resolve.
+
+### Bookkeeping correction to `gold113`
+
+The provenance of the 38 `gold113` labels was re-read from the catalogue:
+**36 come from gen1 and 2 from gen2** — precisely the two dual segments. The
+transfer record declared a single generator for all 38. The cause is mechanical:
+the segment survey took the *first* `ink-detection` entry per segment, which for
+a dual segment is gen2.
+
+Re-deriving both labels from the TIFs reproduces the stored arrays **bit for bit
+for gen2** (max |Δ| = 0 on both segments) and not for gen1 (MAD 9.5 and 20.1),
+which settles the attribution.
+
+This is not a bookkeeping detail confined to the lab. `benchmark/data/
+transfer_gold113.json` ships in this repository, and one of the two mislabelled
+segments, `20250628074500`, supplies half of R7's 113 keV reader contrast:
+
+| | `20250628074500` | `20250716055229` | pooled `c_reader_113keV` |
+|---|---|---|---|
+| as published (gen2 label) | 2.8363 | 2.3441 | **2.5902** |
+| with gen1's label instead | 2.2510 | 2.3441 | **2.2976** |
+
+R7's walls are computed from that pooled contrast. Choosing the other generator
+moves it by **−0.29**, in the direction that makes X₈₀ worse. The R7 verdict
+(X₈₀ > 7.15, wall not cleared) is unaffected in sign — it moves further from the
+threshold, not towards it — but the input was never a single well-defined number.
+
+### Does gen2 carry more letter form?
+
+Same question as R9, same instrument: the Scroll-1 human glyph bank used as a
+fixed library, no recalibration; the field is each generator's own label plus
+Gaussian noise at the standard contrast, which leaves shape as the only free
+variable. Letters are taken from each generator's own components, so each model
+competes with its best material. Comparison is paired by segment.
+
+| | gen1 | gen2 |
+|---|---|---|
+| median z per letter | 0.76 ± 1.93 | **3.16 ± 1.64** |
+| fraction of letters with z ≥ 3 | 0.279 ± 0.168 | **0.487 ± 0.137** |
+| letter candidates per segment | 116 ± 56 | 53 ± 28 |
+| mean of the per-segment median letter height | 1.50 mm | 1.49 mm |
+
+Paired difference **+2.19 ± 1.15, favouring gen2 in 12 of 12 segments.** Frozen
+reference points, unchanged: a *human* label at the same contrast scores 4.70,
+the bank's ceiling is 6.75, a real reader map scores 0.87.
+
+So gen2's blobs are shaped substantially more like letters than gen1's — while
+producing about half as many candidates over a third as much surface. This is
+precision, not coverage. It does not overturn R9, whose conclusion was about
+human versus model labels; it does say R9's negative arm was trained against the
+*less* letter-shaped of the two available model labels, and that a distillation
+target with more form now exists. **Re-running the R9 training arm against gen2
+is the obvious follow-up; it is not run here.**
+
+### Caveats
+
+- **Agreement is not accuracy.** No human ground truth enters anywhere in R11.
+  Two models can agree and both be wrong; 0.860 is an upper bound on how much of
+  the residual is reader error, not a measurement of correctness.
+- The two generators are not independent in the statistical sense — same
+  organisation, same pipeline, overlapping training material. Agreement between
+  them is therefore an *optimistic* bound on label reproducibility.
+- The fine sample is 14 segments from 2 of the 5 dual samples. PHerc1667 and
+  PHerc0814 show markedly lower agreement in the ds8 sweep (Dice 0.30–0.35) and
+  were not measured at full resolution.
+- The shape comparison uses a validity mask derived from the label footprint
+  rather than the surface volume, which is unavailable at 9.362 µm for
+  PHerc0139. It is applied identically to both generators, so the paired
+  direction is safe; the absolute level is not. On the one segment where the
+  exact mask exists, it *widens* the gap (1.36 vs 3.39) rather than creating it.
+- Two of 14 segments dropped out of the shape arm (one too small to yield five
+  letter candidates, one with fewer than 20 clean negative boxes).
+- `20250628074500` is a validation segment in R9, not a holdout. It is used here
+  only for a label-swap comparison in which the reader is frozen and never
+  trained.
+
+---
+
 # Open results
 
-<!-- R21 -->
-## R11 — Two-generator agreement on PHerc0139 **[open]**
-
-The audit (C-A1) found a second ink generator, `20260709123958`, now covering
-37 of 38 PHerc0139 segments and 2 of the 10 `gold113` segments. Per-segment
-agreement between the two has not been measured by anyone we know of. It is the
-cheapest experiment that would put an honest error bar on every 116 keV AUC
-ever reported, including R4's. Slot reserved; **not run**.
-
-| segments with both generators | mean per-segment agreement | disagreement area |
-|---|---|---|
-| 37 (PHerc0139), 2 (PHerc0500P2) | — | — |
+*(none — R9, R10 and R11 are all closed. The follow-ups they name — distilling
+against gen2, and measuring agreement on PHerc1667/PHerc0814 at full resolution
+— are stated as not run.)*

@@ -33,11 +33,34 @@ thresholds 64 and 192. Pick one and you are reporting your threshold. The
 curation in `../benchmark/data/curation_gold116.json` gives a measured
 three-way split (positive / negative / **ignore**) per segment and per tier.
 
-**They are model output, not ground truth.** Every one descends from a single
-checkpoint (`20260417190342`) run outside its calibration regime. See
+**They are model output, not ground truth.** See
 [`../audit/README.md`](../audit/README.md) — including the measurement that
 fine-tuning against them collapses 54 keV performance against *human* labels to
 chance.
+
+**`gold113` is a MIXTURE of two generators — corrected.** An earlier version of
+this repository declared a single generator for all 38 labels. That was wrong:
+
+| generator | segments |
+|---|---|
+| `20260417190342` (`new_canon_autoresearch_recipe`, 2.0–3.0 µm) | **36** |
+| `20260709123958` (`mrg20736_1um_s1z2`, 1.0–1.5 µm) | **2** — `20250628074500`, `20250919184428` |
+
+The two exceptions are precisely the segments the catalogue covers with *both*
+generators; the survey that produced the download paths took the **first**
+`ink-detection` entry per segment, which on a dual segment is the second
+generator. Attribution was settled by re-derivation: rebuilding from the source
+TIFs reproduces the stored arrays **bit for bit for gen2** (max |Δ| = 0 on both)
+and not for gen1 (MAD 9.5 and 20.1).
+
+This matters for anything you compute from `gold113`. The two generators agree
+with each other at AUC 0.860 ± 0.047, but swapping which one supplies the label
+moves a reader's AUC by **0.036** and its contrast `c` by **0.40** — see
+[`../RESULTS.md` §R11](../RESULTS.md). `20250628074500` in particular supplies
+half of the pooled 113 keV reader contrast quoted in §R7 (2.5902 as published
+with gen2, 2.2976 with gen1).
+
+`gold116` is unaffected: PHerc0343P has exactly one generator.
 
 **gold113 has dropped inference tiles.** 25–104 square holes of ~47 × 47 px per
 segment, inside valid material, from the generator's own `tile256/stride128`
@@ -54,7 +77,9 @@ gold116, keep it out.
 EduceLab-Scrolls CT (arXiv:2304.02084)
   -> Vesuvius Challenge surface tracing            -> tifxyz mesh
   -> mesh transformed onto BOTH volumes            -> shared (u,v)
-  -> Challenge ink model 20260417190342 on the fine scan (2.215 um / 111 keV)
+  -> Challenge ink model on the fine scan (2.215 um / 111 keV)
+       gold116: 20260417190342 on all 8
+       gold113: 20260417190342 on 36, 20260709123958 on 2 (the dual segments)
   -> published ink-detection TIF on the fine grid
   -> [this repo] INTER_AREA resize onto the exact coarse grid shape
   -> labels/gold*/<segment>.npz
