@@ -17,32 +17,33 @@ above 100 keV**
 
 ## Summary (200 words)
 
-Above 100 keV — the regime of most Grand Prize scrolls — the only ink
-supervision available is model output, descended from a single checkpoint run
-outside its calibration regime. We show, by controlled experiment, that this is
-the binding constraint.
+The Challenge's 2026 open problems state that "label quality is now one of the
+main unwrapping bottlenecks" and that "better diagnostics matter just as much as
+better models". This package is exactly that: diagnostics, shipped labels, and
+every claim backed by a runnable script.
 
-**The experiment.** Holding architecture, loss and schedule fixed and varying
-only the label: training against the 113/116 keV model-generated labels leaves
-letter form absent (median z per letter 0.58 → −0.03…−0.22, below the frozen
-checkpoint, contrast 2.96 → 0.42), while the identical recipe on *human* 54 keV
-labels installs it (z −0.04 → 1.66, cell AUC 0.61 → 0.83, contrast 1.32 → 2.15,
-with retention improving). The supervision bottleneck is the labels.
+**Controlled experiment.** Holding architecture, loss and schedule fixed and
+varying only the label: training on 113/116 keV model-generated labels leaves
+letter form absent (median z per letter 0.58 → −0.03…−0.22, contrast 2.96 →
+0.42), while the identical recipe on human 54 keV labels installs it (z −0.04 →
+1.66, AUC 0.61 → 0.83). The bottleneck is the labels.
 
-**Tool.** A surface renderer validated at median per-layer correlation 1.00000
-against official renders, fetching only the exact chunk shell interpolation
-touches — 6.4 GB of a 589 GB volume, 1.392× less than a naive bounding box,
-bit-identical output. Renders a 29.21 × 29.58 mm contiguous PHerc1203 surface
-on a laptop.
+**Error bar.** Two generators agree at AUC 0.860 ± 0.047; swapping the label
+source moves a published AUC by 0.036 and contrast by 0.40 — six times the
+margin separating top checkpoints.
 
-**Benchmark.** 38 derived labels at 116/113 keV, shipped. Measured ceiling of
-eleven public checkpoints: AUC 0.57 ± 0.04, none separating from a substrate
-baseline.
+**Benchmark.** 38 derived labels at 116/113 keV, shipped. Ceiling of eleven
+public checkpoints: AUC 0.57 ± 0.04, none separating from a substrate baseline.
 
 **Validation.** The usual permutation null reaches z = 17.4 on blank substrate;
-a mosaic null holds, and caught a real false positive.
+a mosaic null holds, catching a real false positive.
 
-*(word count: 200)*
+**Renderer.** Correlation 1.00000 with official renders, fetching 6.4 GB of a
+589 GB volume; renders a 29 mm PHerc1203 surface on a laptop. All open source
+and runnable today.
+
+*(≈200 words. Both quotations verified verbatim against
+scrollprize.org/2026_open_problems.)*
 
 ---
 
@@ -81,20 +82,6 @@ a mosaic null holds, and caught a real false positive.
   own shipping (`gold113` is 36 labels from one generator and 2 from the other,
   settled bit-exactly by re-derivation) and is corrected in place rather than
   quietly.
-
-- **Surface renderer with an offline chunk planner.** Enumerates the exact set
-  of zarr chunks a surface render can touch — `floor(p)` and `floor(p)+1` per
-  axis per layer — before opening a connection, then fetches only those.
-  6.67 GB against 9.28 GB for the naive per-tile bounding box (1.392×
-  over-fetch) on a 589 GB volume. Parity with the unrestricted renderer
-  verified at **0 differing pixels**; fidelity against the Challenge's own
-  published renders at **median correlation 1.00000** (MAD 0.0014, 125 016 px,
-  31 layers). Puts surface rendering of prize scrolls on consumer hardware.
-
-- **A 29 mm contiguous surface from a Grand Prize scroll.** PHerc1203
-  `auto_grown_20251005230830031`: 29.21 × 29.58 mm, one connected component,
-  zero internal holes, 4.98 GB downloaded. Reproducible from a checksummed
-  recipe; no data redistributed.
 
 - **`gold116` / `gold113` benchmark, shipped.** 18 segments, 119.92 cm² valid,
   1163.9 mm² of ink, on the two grids covering all thirteen prize scrolls.
@@ -143,6 +130,20 @@ a mosaic null holds, and caught a real false positive.
   the binding constraint is **window extent, not reader contrast**, so no reader
   improvement rescues a negative on windows this size.
 
+- **Surface renderer with an offline chunk planner.** Enumerates the exact set
+  of zarr chunks a surface render can touch — `floor(p)` and `floor(p)+1` per
+  axis per layer — before opening a connection, then fetches only those.
+  6.67 GB against 9.28 GB for the naive per-tile bounding box (1.392×
+  over-fetch) on a 589 GB volume. Parity with the unrestricted renderer
+  verified at **0 differing pixels**; fidelity against the Challenge's own
+  published renders at **median correlation 1.00000** (MAD 0.0014, 125 016 px,
+  31 layers). Puts surface rendering of prize scrolls on consumer hardware.
+
+- **A 29 mm contiguous surface from a Grand Prize scroll.** PHerc1203
+  `auto_grown_20251005230830031`: 29.21 × 29.58 mm, one connected component,
+  zero internal holes, 4.98 GB downloaded. Reproducible from a checksummed
+  recipe; no data redistributed.
+
 ---
 
 ## Links
@@ -160,6 +161,19 @@ a mosaic null holds, and caught a real false positive.
 | Rendered PHerc1203 surface (optional host) | `<<< URL or omit >>>` |
 
 ---
+
+## Fit against the published criteria
+
+Verified quotations, for the submitter's confidence — do not paraphrase these
+as if they were ours.
+
+| published criterion | how this package meets it |
+|---|---|
+| *"label quality is now one of the main unwrapping bottlenecks"* (2026 open problems, §2) | R9 measures that bottleneck causally — same recipe, only the label varied — and R11 puts a ±0.036 AUC / ±0.40 `c` error bar on it. |
+| *"better diagnostics matter just as much as better models"* (2026 open problems, §3) | The whole package is diagnostics: a benchmark, a provenance audit, and judges with a bounded false-positive rate. We ship no new reader. |
+| *"released or open-sourced early"* (Progress Prizes) | MIT code, CC BY-NC labels, complete on submission — not a promise of a later release. |
+| *"Actually get used"* + *"well documented"* (Progress Prizes) | Four worked examples, three of which need no network and no GPU; every claim maps to a command in `docs/CLAIMS.md`; labels ship in-repo so the benchmark runs on a clone. |
+| *"real data"* (Progress Prizes) | Every number is measured on published Challenge scans and labels. No synthetic benchmark anywhere. |
 
 ## Suggested category
 
