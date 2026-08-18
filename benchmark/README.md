@@ -53,6 +53,50 @@ each grid is padded to a chunk multiple, so the measured ratio lands at
 4.19–4.22 against a theoretical 4.2266 (max deviation 0.83 %). Scaling by
 4.2266 would leave a systematic sub-pixel drift across the segment.
 
+### There is now an official tool for this. Read this before choosing.
+
+**As of villa PR #1457 (August 2026), the Challenge ships
+`vesuvius/src/vesuvius/tifxyz_label_transfer/`** — the same operation: moving
+labels between `tifxyz` flattenings of one physical surface. If you are
+transferring labels, **you should probably use theirs**, and this section
+exists so you can tell the two apart rather than assume they agree.
+
+| | villa `tifxyz_label_transfer` | this repository |
+|---|---|---|
+| correspondence | via **3D geometry** — per-pixel XYZ builds a target→source UV warp | via the **shared mesh**: both surface volumes are published transforms of one `tifxyz`, so `(u,v)` is already common |
+| resampling | **nearest neighbour**; "label values are never blended" | **`INTER_AREA`** area-averaging |
+| guards | re-checks in 3D at every output pixel against a distance threshold; **aborts below 1 % coverage**; canvas offset by band-passed tile-wise phase correlation | V1–V4 published with numbers (see above), including a displaced-control correlation |
+| generality | handles arbitrary flattenings, crops, rotations, flips | **only** valid when both volumes derive from the same published mesh |
+
+Two differences are substantive, not cosmetic:
+
+1. **Nearest neighbour vs area-averaging.** Theirs is right for categorical or
+   instance labels, where blending invents values that mean nothing. Ours is a
+   **4.23× reduction of a continuous probability map**, where nearest-neighbour
+   sampling would discard ~94 % of the source pixels and alias the stroke edges.
+   This is why the shipped labels are graded 0–255 rather than binary — and it
+   is also why the "the label is not binary" warning above exists. If you need a
+   binary label, threshold ours with the curation masks; do not assume it was
+   ever binary.
+2. **Their caveat lands on us.** Their theory notes that a constant canvas-pixel
+   offset "must be measured from image content and corrected in 2D" because "no
+   single 3D transform can repair it". Our method assumes the shared mesh leaves
+   **no** such offset, and our V3 control is consistent with that for the
+   label→label transfer (aligned vs displaced correlation 0.63–0.66 vs
+   0.13–0.20). But the audit independently measured a **(−1, −1) cell ≈ 138 µm**
+   optimum between the label and reader response on PHerc0343P. Those are
+   different comparisons and we have **not** shown they are the same effect —
+   but villa's caveat is precisely the mechanism that would produce ours, and an
+   uncorrected sub-cell offset is the most likely place our transfer is wrong.
+   Anyone re-deriving these labels should measure the offset rather than inherit
+   our assumption.
+
+**What is contributed here is not the transfer.** The transfer is a resize; the
+official tool does the general case better. The contribution is what the
+transfer was *for*: the resulting benchmark, the measured ceiling of public
+checkpoints against it, the provenance audit of the labels themselves, and the
+inter-generator error bar that any evaluation using them inherits.
+
 ### Duality is verified per segment, four ways
 
 | check | what | result |

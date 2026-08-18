@@ -83,6 +83,18 @@ scrollprize.org/2026_open_problems.)*
   settled bit-exactly by re-derivation) and is corrected in place rather than
   quietly.
 
+- **Positioning, stated plainly.** villa PR #1457 (August 2026) now ships
+  `tifxyz_label_transfer`, which performs the same label-transfer operation
+  used to build these labels — via 3D geometry and nearest-neighbour sampling,
+  where ours uses the shared-mesh `(u,v)` and area-averaging appropriate to a
+  4.23× reduction of a continuous probability map. For the general case their
+  tool is better, and `benchmark/README.md` says so and tabulates the
+  differences, including their caveat about uncorrectable 2D canvas offsets —
+  which is the most likely place our transfer is wrong. **The contribution here
+  is not the transfer.** It is what the transfer was for: the benchmark, the
+  measured ceiling against it, the provenance audit, and the inter-generator
+  error bar.
+
 - **`gold116` / `gold113` benchmark, shipped.** 18 segments, 119.92 cm² valid,
   1163.9 mm² of ink, on the two grids covering all thirteen prize scrolls.
   Duality verified four ways per segment (shape ratio, grid landing, output

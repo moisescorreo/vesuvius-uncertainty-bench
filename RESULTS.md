@@ -267,7 +267,9 @@ the identical recipe on human labels can.
 - τ = 3.5584 was calibrated on the **frozen** reader's maps, so `frac_detecta`
   is not comparable across models. **`z` is** the comparable quantity — it is
   standardised against each model's own null — and it is what we report.
-- The 113/116 keV labels are output of `ink_canonical_2um` on the fine volume:
+- The 113/116 keV labels are output of the Challenge's ink model
+  (catalogue id `20260417190342`, published under the `ink_canonical_2um`
+  family) on the fine volume:
   **independent of the 113/116 keV data, but not human truth**. The 54 keV
   labels *are* human. That asymmetry is the experiment's whole point, and also
   its main limitation: "human" and "54 keV" are not fully separable here.
