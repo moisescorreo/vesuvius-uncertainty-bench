@@ -256,6 +256,23 @@ rescues it.**
 
 → [`validation/README.md`](validation/README.md)
 
+### 4b. What this discipline actually costs
+
+[`docs/CASE_STUDY.md`](docs/CASE_STUDY.md) is the honest ledger: **four
+instrument failures caught before any number was published**, each with the
+false positive it would have produced and the control that stopped it — a
+standardiser built on the wrong material (a +0.9σ bias, exposed by a negative
+control scoring 4.36 while the reading scored 1.12); a repair that passed
+calibration while *penalising* real text; a look-elsewhere defect across 99
+orientations that no null family survived (3 640 evaluations, figure never
+computed); and a 2.68 mm fibre weave that looked exactly like line spacing until
+a light/dark channel test showed it was **stronger in the light channel** —
+ink can only darken, so it was relief.
+
+Nine rounds of judgement produced **zero claims about the material**. The cost
+was claiming nothing. That is the trade this tooling exists to let people make
+deliberately.
+
 ---
 
 ## Caveats, stated up front

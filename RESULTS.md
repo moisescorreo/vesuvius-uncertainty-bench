@@ -6,7 +6,9 @@ public bucket. The claim → script → artifact map is
 [`docs/CLAIMS.md`](docs/CLAIMS.md).
 
 All sections are closed; follow-ups the results name but do not claim are marked
-**not run**. **R9 is the controlled experiment** that explains the rest — with
+**not run**. For the failures caught *before* any of these numbers were emitted —
+four instrument defects, each with the false positive it would have produced —
+see [`docs/CASE_STUDY.md`](docs/CASE_STUDY.md). **R9 is the controlled experiment** that explains the rest — with
 everything but the label held fixed, letter form is learnable from human labels
 and not from model-generated ones — and **R11 is the error bar** that every
 number measured against a single generator's label, including R4's and R7's,

@@ -83,6 +83,21 @@ scrollprize.org/2026_open_problems.)*
   settled bit-exactly by re-derivation) and is corrected in place rather than
   quietly.
 
+- **A worked case study of the diagnostics catching real errors**
+  (`docs/CASE_STUDY.md`). Four instrument failures found before any number was
+  published, each with the false positive it would have produced: a standardiser
+  built on the wrong material (**+0.9σ** systematic bias — the negative control
+  scored **4.36** while the actual reading scored **1.12**); a repair that passed
+  calibration on blanks while *penalising* real text (displacement **−2.76**);
+  a look-elsewhere defect over 99 orientations that **no null family survived**
+  (3 640 evaluations, 8 families, the figure never computed); and a **2.68 mm
+  fibre weave** indistinguishable from line spacing until a light/dark channel
+  test showed it was *stronger in the light channel* — ink can only darken, so
+  it was relief. Plus two defects found by auditing our own record: a prior
+  resting on a broken citation chain, and a band-clipping artifact in one of our
+  own diagnostics, both corrected retroactively rather than quietly. **Nine
+  rounds of judgement, zero claims about the material.**
+
 - **Positioning, stated plainly.** villa PR #1457 (August 2026) now ships
   `tifxyz_label_transfer`, which performs the same label-transfer operation
   used to build these labels — via 3D geometry and nearest-neighbour sampling,
@@ -182,7 +197,7 @@ as if they were ours.
 | published criterion | how this package meets it |
 |---|---|
 | *"label quality is now one of the main unwrapping bottlenecks"* (2026 open problems, §2) | R9 measures that bottleneck causally — same recipe, only the label varied — and R11 puts a ±0.036 AUC / ±0.40 `c` error bar on it. |
-| *"better diagnostics matter just as much as better models"* (2026 open problems, §3) | The whole package is diagnostics: a benchmark, a provenance audit, and judges with a bounded false-positive rate. We ship no new reader. |
+| *"better diagnostics matter just as much as better models"* (2026 open problems, §3) | The whole package is diagnostics: a benchmark, a provenance audit, and judges with a bounded false-positive rate. We ship no new reader. `docs/CASE_STUDY.md` shows the diagnostics working: four instrument failures caught before any number was published. |
 | *"released or open-sourced early"* (Progress Prizes) | MIT code, CC BY-NC labels, complete on submission — not a promise of a later release. |
 | *"Actually get used"* + *"well documented"* (Progress Prizes) | Four worked examples, three of which need no network and no GPU; every claim maps to a command in `docs/CLAIMS.md`; labels ship in-repo so the benchmark runs on a clone. |
 | *"real data"* (Progress Prizes) | Every number is measured on published Challenge scans and labels. No synthetic benchmark anywhere. |
