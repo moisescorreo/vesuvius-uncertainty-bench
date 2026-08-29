@@ -1,6 +1,5 @@
 # Submission draft — copy/paste into the form
 
-Not submitted. Fill the placeholders marked `<<< >>>` and delete this line.
 
 ---
 
@@ -177,7 +176,7 @@ scrollprize.org/2026_open_problems.)*
 
 | | |
 |---|---|
-| Repository | `<<< URL >>>` |
+| Repository | https://github.com/moisescorreo/vesuvius-uncertainty-bench |
 | Licence | MIT (code) / CC BY-NC 4.0 (derived labels) |
 | Results table | `RESULTS.md` |
 | Claim → script map | `docs/CLAIMS.md` |
@@ -185,7 +184,6 @@ scrollprize.org/2026_open_problems.)*
 | Benchmark | `benchmark/README.md` |
 | Provenance audit | `audit/README.md` |
 | Validation methodology | `validation/README.md` |
-| Rendered PHerc1203 surface (optional host) | `<<< URL or omit >>>` |
 
 ---
 
